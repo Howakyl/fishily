@@ -21,9 +21,22 @@ const show = (req, res) => {
         console.log('error fetching user data', err);
         res.json({ Error: 'Unable to fetch user data'});
     });
-}
+};
+
+const create = (req,res) => {
+    db.User.create(req.body)
+    .then((createdUser) => {
+        res.json({ user: createdUser});
+    })
+    .catch((err) => {
+        console.log('error creating game: ', err);
+        res.json({ Error: 'Unable to create game.' });
+    });
+};
+
 
 module.exports = {
     index,
     show,
+    create,
 }

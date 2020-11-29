@@ -14,8 +14,7 @@ app.use(express.json());
 // app.use(cors(corsOptions));
 
 //API ROUTES
-// ----> PUT ROUTES HERE <----
 app.use("/api/fishily/users", routes.users);
 
 //conection 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, () => console.log(`Server is running on port: ${port}`));
