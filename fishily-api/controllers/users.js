@@ -13,6 +13,7 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
+
     db.User.findById(req.params.id)
     .then((foundUser) => {
         res.json({ user: foundUser });
@@ -24,6 +25,7 @@ const show = (req, res) => {
 };
 
 const create = (req,res) => {
+
     db.User.create(req.body)
     .then((createdUser) => {
         res.json({ user: createdUser});
@@ -34,9 +36,25 @@ const create = (req,res) => {
     });
 };
 
+const update = (req,res) => {
+
+    db.User.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true })
+            .then((updatedUser) => {
+                res.json({ user: updatedUser });
+            })
+            .catch((err) => {
+                console.log('error updating user: ', err);
+                res.json({ Error: 'Unable to update user.'});
+            });
+};
+
 
 module.exports = {
     index,
     show,
     create,
+    update,
 }
