@@ -12,6 +12,19 @@ const index = (req,res) => {
         })
 };
 
+// SHOW POST
+const show = (req,res) => {
+
+    db.Post.findById(req.params.id)
+        .then((foundPost) => {
+            res.json({ post: foundPost });
+        })
+        .catch((err) => {
+            console.log('error fetching post data', err);
+            res.json({ Error: 'Unable to fetch post data'});
+        });
+};
+
 // ADD POSTS
 const create = (req,res) => {
 
@@ -44,4 +57,5 @@ const create = (req,res) => {
 module.exports = {
     index,
     create,
+    show,
 }

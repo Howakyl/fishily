@@ -3,6 +3,7 @@ const ctrl = require("../controllers");
 
 // /api/fishily/posts
 router.get("/", ctrl.posts.index);
-router.post("/users/:id", ctrl.posts.create);
+router.get("/:id", ctrl.posts.show);
+router.post("/:id", ctrl.posts.create);
 
 module.exports = router;
