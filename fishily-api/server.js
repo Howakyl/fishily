@@ -15,6 +15,7 @@ app.use(express.json());
 
 //API ROUTES
 app.use("/api/fishily/users", routes.users);
+app.use("/api/fishily/posts", routes.posts);
 
 //conection 
 app.listen(port, () => console.log(`Server is running on port: ${port}`));
