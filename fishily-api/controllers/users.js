@@ -55,6 +55,12 @@ const destroy = (req,res) => {
 
     db.User.findByIdAndDelete(req.params.id)
         .then((deletedUser) => {
+
+            db.Post.deleteMany({_id: {$in: deletedUser.posts }} , (err, result) => {
+                if (err) return console.log(err);
+                console.log('result from deleteMany: ', result);
+            });
+
             res.json({ user: deletedUser });
         })
         .catch((err) => {

@@ -54,8 +54,33 @@ const create = (req,res) => {
         });
 };
 
+const destroy = (req,res) => {
+    const postId = req.params.id;
+
+    db.Post.findByIdAndDelete(postId)
+        .then((deletedPost) => {
+
+            db.User.findOne({'posts': postId} , (err, foundUser) => {
+                if (err) return console.log(err);
+
+                foundUser.posts.remove(postId);
+                foundUser.save((err, savedUser) => {
+                    if (err) return console.log(err);
+                    console.log('updated User: ', savedUser);
+                });
+            });
+
+            res.json({ post: deletedPost });
+        })
+        .catch((err) => {
+            console.log('error deleting post: ', err);
+            res.json({ Error: 'unable to delete post.'});
+        });
+};
+
 module.exports = {
     index,
     create,
     show,
+    destroy,
 }
