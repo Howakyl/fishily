@@ -18,10 +18,10 @@ const postSchema = new Schema({
     },
     location: {
         lat: {
-            type: String,
+            type: Number,
         },
         lng: {
-            type: String,
+            type: Number,
         }
     },
     image: {

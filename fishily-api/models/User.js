@@ -5,6 +5,7 @@ const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
+        minlength: 4,
     },
     firstName: {
         type: String,
@@ -15,6 +16,7 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true,
+        minlength: 4,
     },
     picture: {
         type: String,

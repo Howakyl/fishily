@@ -27,13 +27,13 @@ const show = (req, res) => {
 const create = (req,res) => {
 
     db.User.create(req.body)
-    .then((createdUser) => {
-        res.json({ user: createdUser});
-    })
-    .catch((err) => {
-        console.log('error creating game: ', err);
-        res.json({ Error: 'Unable to create game.' });
-    });
+        .then((createdUser) => {
+            res.json({ user: createdUser});
+        })
+        .catch((err) => {
+            console.log('error creating user: ', err);
+            res.json({ Error: 'Unable to create user.' });
+        });
 };
 
 const update = (req,res) => {
