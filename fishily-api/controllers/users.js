@@ -51,10 +51,23 @@ const update = (req,res) => {
             });
 };
 
+const destroy = (req,res) => {
+
+    db.User.findByIdAndDelete(req.params.id)
+        .then((deletedUser) => {
+            res.json({ user: deletedUser });
+        })
+        .catch((err) => {
+            console.log('error deleting user : ', err);
+            res.json({ Error: 'unable to delete user.'});
+        });
+};
+
 
 module.exports = {
     index,
     show,
     create,
     update,
+    destroy,
 }
