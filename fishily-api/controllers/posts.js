@@ -54,6 +54,23 @@ const create = (req,res) => {
         });
 };
 
+//UPDATE POST
+const update = (req,res) => {
+
+    db.Post.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true})
+            .then((updatedPost) => {
+                res.json({ post: updatedPost });
+            })
+            .catch((err) => {
+                console.log('error updating post: ', err);
+                res.json({ Error: 'Unable to update post. '});
+            });
+};
+
+//DELETE POST, DELETES POST ON USER
 const destroy = (req,res) => {
     const postId = req.params.id;
 
@@ -82,5 +99,6 @@ module.exports = {
     index,
     create,
     show,
-    destroy,
+    update,
+    destroy
 }
