@@ -20,7 +20,7 @@ const UserSchema = new Schema({
         type: String,
         default: 'https://www.abc.net.au/cm/rimage/11851850-3x2-large.jpg?v=2'
     }
-});
+}, {timestamps: true});
 
 const User = mongoose.model("User", UserSchema);
 
