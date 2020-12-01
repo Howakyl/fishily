@@ -1,6 +1,6 @@
 import React from 'react';
 import UserModel from '../models/user';
-import UserCard from '../components/UserCard';
+import UserDetailCard from '../components/UserDetailCard';
 
 class UserShow extends React.Component {
 
@@ -10,12 +10,10 @@ class UserShow extends React.Component {
     };
 
     componentDidMount() {
-        console.log('PROPS : ' , this.props)
         const userId = this.props.match.params.id
         
         UserModel.getOne(userId).then((res) => {
             
-            console.log('user data: ', res)
             this.setState({
                 user: res.data.user,
                 loading: false
@@ -25,15 +23,17 @@ class UserShow extends React.Component {
 
 
     render () {
-        // if (!this.state.loading) {
+        if (!this.state.loading) {
             return (
                 <div>
                     <h1>User show</h1>
-                    <UserCard user={this.state.user}/>
+                    <UserDetailCard user={this.state.user}/>
                 </div>
             );
+        } else {
+            return <h1>Loading...</h1>
         }
-    // };
+    };
 };
 
 export default UserShow;

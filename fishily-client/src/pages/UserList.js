@@ -22,7 +22,7 @@ class UserList extends React.Component {
 
     renderUsers () {
         
-        console.log(this.state)
+        // console.log(this.state)
         return this.state.users.map((user) => {
             return (
                 <UserCard
