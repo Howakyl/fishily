@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserCard = (props) => {
 
@@ -17,7 +18,7 @@ const UserCard = (props) => {
             <div className="card-body">
                 <h5 className="card-title">{props.user.username}</h5>
                 <p className="card-text">{bioText()}</p>
-                <a href="/" className="btn btn-primary">View Profile</a>
+                <Link to={`users/${props.user._id}`} className="btn btn-primary">View Profile</Link>
             </div>
         </div>
     )

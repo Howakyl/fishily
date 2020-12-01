@@ -3,6 +3,14 @@ import UserCard from '../components/UserCard';
 
 class UserShow extends React.Component {
 
+    // state = {
+    //     user: {},
+    //     loading: true
+    // };
+
+    // componentDidMount() {
+
+    // }
 
 
     render () {
