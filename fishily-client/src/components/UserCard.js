@@ -12,8 +12,6 @@ const UserCard = (props) => {
 
     return (
         
-
-
         <div className="card" style={{width: '18rem'}}>
             <img src={props.user.picture} className="card-img-top" alt='user'/>
             <div className="card-body">
