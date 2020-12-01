@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import 'react-router-dom';
 const endPoint = `http://localhost:4000/api/fishily/users`;
 
 class UserModel {
@@ -7,8 +8,8 @@ class UserModel {
         return request;
     };
 
-    static getOne = () => {
-        let request = axios.get(`${endPoint}/._id`);
+    static getOne = (id) => {
+        let request = axios.get(`${endPoint}/${id}`);
         return request;
     }
 };

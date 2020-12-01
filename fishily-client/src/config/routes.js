@@ -7,7 +7,7 @@ import UserShow from '../pages/UserShow';
 export default (
     <Switch>
         <Route exact path='/' component={ Home }/>
-        <Route path='/users' component={ UserList }/>
-        <Route path='/users/:id' component={ UserShow }/>
+        <Route exact path='/users' component={ UserList }/>
+        <Route exact path='/users/:id' component={ UserShow }/>
     </Switch>
 )
