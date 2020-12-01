@@ -1,29 +1,55 @@
 import React from 'react';
 import UserModel from '../models/user';
+import UserCard from '../components/UserCard';
 
 class UserList extends React.Component {
     state = {
-        users: []
+        users: [],
+        loading: true,
     }
 
     componentDidMount() {
 
-        UserModel.all().then((data) => {
-            console.log('data:', data);
+        UserModel.all().then((res) => {
+            console.log('data:', res);
 
-            this.setState({ users: data.users})
+            this.setState({ 
+                users: res.data.users,
+                loading: false,
+            })
         });
     };
 
-    render () {
-        return (
-            <div>
-                <h2>users!</h2>
-                <ul>
+    renderUsers () {
+        
+        console.log(this.state)
+        return this.state.users.map((user) => {
+            return (
+                <UserCard
+                    user={user}
+                    key={user._id}
+                />
+            )
+        })
+    }
+    /* <li>{user.firstName}</li> */
 
-                </ul>
-            </div>
-        )
+    render () {
+        if(!this.state.loading) {
+            return (
+                <div>
+                    <h2>users!</h2>
+                    <ul>
+                    
+                        {this.renderUsers()}
+                    </ul>
+                </div>
+            )
+        } else {
+            return (
+                <h1>Loading...</h1>
+            )
+        }
     }
 };
 

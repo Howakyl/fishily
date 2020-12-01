@@ -2,7 +2,9 @@ import React from 'react';
 
 const UserCard = (props) => {
     return (
-        <div></div>
+        <li>
+            <h2>{props.user.firstName}</h2>
+        </li>
     )
 }
 
