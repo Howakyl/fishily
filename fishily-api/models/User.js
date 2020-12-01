@@ -18,6 +18,10 @@ const UserSchema = new Schema({
         required: true,
         minlength: 4,
     },
+    bio: {
+        type: String,
+        maxlength: 200,
+    },
     picture: {
         type: String,
         default: 'https://www.abc.net.au/cm/rimage/11851850-3x2-large.jpg?v=2'

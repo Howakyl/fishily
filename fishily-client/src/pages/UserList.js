@@ -32,7 +32,6 @@ class UserList extends React.Component {
             )
         })
     }
-    /* <li>{user.firstName}</li> */
 
     render () {
         if(!this.state.loading) {
