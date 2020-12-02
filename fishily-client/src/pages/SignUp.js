@@ -11,7 +11,6 @@ class SignUp extends React.Component {
     };
 
     handleInputchamge = (event) => {
-        console.log('input changed', event.target.name);
 
         this.setState({ [event.target.name] : event.target.value });
     };
@@ -53,7 +52,6 @@ class SignUp extends React.Component {
                             value={this.state.password}
                             name="password"
                         />
-                        {/* <small id="emailHelp" className="form-text text-muted">don't use a sensitive password!</small> */}
                     </div>
                     <div className="form-group">
                         <label htmlFor="firstNameInput">first name</label>
