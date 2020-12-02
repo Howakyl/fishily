@@ -11,6 +11,12 @@ class SignUp extends React.Component {
         picture: ''
     };
 
+    handleInputchamge = (event) => {
+        console.log('input changed', event.target.name);
+
+        this.setState({ [event.target.name] : event.target.value });
+    };
+
     render () {
         return (
             <div>
@@ -19,7 +25,13 @@ class SignUp extends React.Component {
                     <div className="form-group">
                         <label htmlFor="usernameInput">username</label>
                         <small className="form-text text-muted">required</small>
-                        <input type="text" className="form-control" id="usernameInput" aria-describedby="emailHelp"/>
+                        <input
+                            onChange={this.handleInputchamge}
+                            type="text" 
+                            className="form-control" 
+                            id="usernameInput"
+                            name="username"
+                        />
                     </div>
                     <div className="form-group">
                         <label htmlFor="passInput">Password</label>
@@ -29,12 +41,17 @@ class SignUp extends React.Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="firstNameInput">first name</label>
-                        <input type="text" className="form-control" id="firstNameInput" aria-describedby="emailHelp"/>
+                        <input type="text" className="form-control" id="firstNameInput" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="lastNameInput">last name</label>
-                        <input type="text" className="form-control" id="lastNameInput" aria-describedby="emailHelp"/>
+                        <input type="text" className="form-control" id="lastNameInput" />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="bioInput">Create a bio:</label>
+                        <textarea type="text" className="form-control" id="bioInput" />
+                    </div>
+
                     
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
