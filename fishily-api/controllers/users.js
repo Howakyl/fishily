@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+
 const db = require("../models");
 
 const index = (req, res) => {
@@ -26,14 +28,44 @@ const show = (req, res) => {
 
 const create = (req,res) => {
 
-    db.User.create(req.body)
-        .then((createdUser) => {
-            res.json({ user: createdUser});
+    db.User.findOne({username : req.body.username}, (err, user) => {
+        if(err) return console.log(err);
+
+        if (user) {
+            console.log('User Account Already Exists');
+            return res.json({ Error: 'User already exists.'});
+        };
+
+        bcrypt.genSalt(10, (err, salt) => {
+            // CHANGE THIS TO JUST LOG ERROR <----
+            if (err) return console.log('Error Generating Salt'); 
+            console.log('Salt = ', salt);
+
+            bcrypt.hash(req.body.password, salt, (err, hashedPassword) => {
+                if (err) return console.log(err);
+
+                console.log('Hashed password: ', hashedPassword);
+
+                const newUser = {
+                    username: req.body.username,
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    password: hashedPassword,
+                    bio: req.body.password,
+                }
+
+                db.User.create(newUser)
+                    .then((createdUser) => {
+                        res.json({ user: createdUser});
+                    })
+                    .catch((err) => {
+                        console.log('error creating user: ', err);
+                        res.json({ Error: 'Unable to create user.' });
+                    });
+            })
         })
-        .catch((err) => {
-            console.log('error creating user: ', err);
-            res.json({ Error: 'Unable to create user.' });
-        });
+
+    });
 };
 
 const update = (req,res) => {
