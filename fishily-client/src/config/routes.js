@@ -4,12 +4,22 @@ import Home from '../pages/Home';
 import UserList from '../pages/UserList';
 import UserShow from '../pages/UserShow';
 import SignUp from '../pages/SignUp';
+import LogIn from '../pages/LogIn';
 
-export default (
-    <Switch>
-        <Route exact path='/' component={ Home }/>
-        <Route exact path='/users' component={ UserList }/>
-        <Route exact path='/users/:id' component={ UserShow }/>
-        <Route path='/signup' component={ SignUp }/>
-    </Switch>
-)
+function Routes (props) {
+
+    // const user = props.user;
+    return (
+        <Switch >
+            <Route exact path='/' render={() => <Home user={props.user} setUser={props.setUser}/>}  />
+            <Route exact path='/users' component={ UserList }/>
+            <Route exact path='/users/:id' component={ UserShow }/>
+            <Route path='/signup' component={ SignUp }/>
+            {/* <Route path='/login' component={ LogIn } user={user}/> */}
+            <Route render={() => <LogIn user={props.user} setUser={props.setUser}/>}/>
+        </Switch>
+    )
+}
+
+
+export default Routes;

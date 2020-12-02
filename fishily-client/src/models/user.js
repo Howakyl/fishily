@@ -1,6 +1,7 @@
 import axios from 'axios';
 // import 'react-router-dom';
 const endPoint = `http://localhost:4000/api/fishily/users`;
+const logInEndPoint = `http://localhost:4000/api/fishily/users/login`;
 
 class UserModel {
     //GET all users
@@ -18,6 +19,12 @@ class UserModel {
     //CREATE user
     static create = (user) => {
         let request = axios.post(endPoint, user);
+        return request;
+    }
+
+    //LOGIN user
+    static login = (user) => {
+        let request = axios.post(logInEndPoint , user);
         return request;
     }
 };

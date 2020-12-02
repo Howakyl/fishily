@@ -38,13 +38,10 @@ const create = (req,res) => {
 
         bcrypt.genSalt(10, (err, salt) => {
             // CHANGE THIS TO JUST LOG ERROR <----
-            if (err) return console.log('Error Generating Salt'); 
-            console.log('Salt = ', salt);
+            if (err) return console.log(err); 
 
             bcrypt.hash(req.body.password, salt, (err, hashedPassword) => {
                 if (err) return console.log(err);
-
-                console.log('Hashed password: ', hashedPassword);
 
                 const newUser = {
                     username: req.body.username,
@@ -101,6 +98,39 @@ const destroy = (req,res) => {
         });
 };
 
+const logIn = (req,res) => {
+
+    db.User.findOne({ username: req.body.username} , (err,user) => {
+        if (err) return console.log(err);
+
+        if(!user) {
+            console.log('Login Route: No User Found');
+            res.json({ Error: 'no user found.'});
+        };
+
+        // Verify user password with login password
+        bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
+            if (err) return console.log('error comparing passwords');
+            console.log(isMatch)
+
+            if(isMatch) {
+                req.session.currentUser = user;
+                console.log('successfully logged in!')
+                res.send(req.session.currentUser);
+            };
+        });
+    });
+};
+
+const logOut = (req,res) => {
+
+    if (req.session.currentUser) {
+        req.session.destroy((err) => {
+            if (err) return console.log('error destroying session');
+        });
+    };
+};
+
 
 module.exports = {
     index,
@@ -108,4 +138,6 @@ module.exports = {
     create,
     update,
     destroy,
+    logIn,
+    logOut,
 }
