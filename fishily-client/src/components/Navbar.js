@@ -60,6 +60,10 @@ const Navbar = (props) => {
                 <li className="nav-item active">
                     <Link className="nav-link" to="/users">All users</Link>
                 </li>
+                <li className="nav-item active">
+                    <Link className="nav-link" to="/posts">All Posts</Link>
+                </li>
+
                 {renderCreatePost()}
                 {loginNav()}
                 </ul>
