@@ -29,7 +29,7 @@ class SignUp extends React.Component {
     render () {
 
         console.log(this.props)
-        if(this.props.user) {
+        if(this.props.user.username) {
             return <Redirect to='/'/>
         } else {
             return (

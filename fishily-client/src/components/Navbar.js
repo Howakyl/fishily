@@ -3,13 +3,29 @@ import { Link } from 'react-router-dom';
 const Navbar = (props) => {
     
     function loginNav() {
-        if(!props.user) {
-            <li className="nav-item active">
+        if(!props.user.username) {
+            return (
+                <>
+                    <li className="nav-item active">
                         <Link className="nav-link" to="/login">Log In</Link>
                     </li>
+                    <li className="nav-item active">
+                        <Link className="nav-link" to="/signup">Sign Up</Link>
+                    </li>
+                </>
+            )
+        } else {
+            return (
+                <>
+                <li className="nav-item active">
+                    <Link className="nav-link" to="/">Log Out</Link>
+                </li>
+                </>
+            )
         }
     }
 
+    console.log(loginNav())
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">Fishily</Link>
@@ -22,10 +38,11 @@ const Navbar = (props) => {
                 <li className="nav-item active">
                     <Link className="nav-link" to="/users">All users</Link>
                 </li>
-                <li className="nav-item active">
-                    <Link className="nav-link" to="/signup">Sign Up</Link>
-                </li>
+                
                 {loginNav()}
+                {/* <li className="nav-item active">
+                    <Link className="nav-link" to="/login">Log In</Link>
+                </li> */}
                 {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div className="dropdown-menu" aria-labelledby="dropdown04">

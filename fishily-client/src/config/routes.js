@@ -14,9 +14,9 @@ function Routes (props) {
             <Route exact path='/' render={() => <Home user={props.user} />}  />
             <Route exact path='/users' component={ UserList }/>
             <Route exact path='/users/:id' component={ UserShow }/>
-            <Route path='/signup' component={ SignUp }/>
-            <Route render={() => <LogIn user={props.user} setUser={props.setUser}/>}/>
-            <Route render={() => <SignUp user={props.user} setUser={props.setUser}/>}/>
+            {/* <Route path='/signup' component={ SignUp }/> */}
+            <Route path='/login' render={() => <LogIn user={props.user} setUser={props.setUser}/>}/>
+            <Route path='/signup' render={() => <SignUp user={props.user} setUser={props.setUser}/>}/>
         </Switch>
     )
 }
