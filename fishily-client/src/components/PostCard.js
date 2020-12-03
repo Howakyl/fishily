@@ -11,8 +11,7 @@ const PostCard  = (props) => {
                 <div className="col-md-8">
                     <div className="card-body">
                         <h5 className="card-title">{props.post.title}</h5>
-                        {/* MAKE SURE TO UPDATE THIS */}
-                        <h6>By: {props.post.user}</h6>
+                        <h6>By: {props.post.user.username}</h6>
                         <p className="card-text">{props.post.description}</p>
                         <p className="card-text"><small className="text-muted">Posted On: {props.post.date}</small></p>
                     </div>

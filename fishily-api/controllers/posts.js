@@ -3,6 +3,7 @@ const db = require("../models/");
 // ALL POSTS
 const index = (req,res) => {
     db.Post.find({})
+        .populate("user")
         .then((foundPosts) => {
             res.json({ posts: foundPosts});
         })
@@ -32,6 +33,8 @@ const create = (req,res) => {
     db.User.findById(userId)
         .then((foundUser) => {
             // console.log('FOUND USER:' , foundUser);
+            req.body.user = userId;
+            console.log('REQ BODY: ' ,req.body);
             db.Post.create(req.body)
                 .then((createdPost) => {
                     // console.log('CREATED POST:', createdPost)

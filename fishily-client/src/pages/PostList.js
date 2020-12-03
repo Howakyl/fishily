@@ -13,7 +13,7 @@ class PostList extends React.Component {
 
         PostModel.all().then((res) => {
             console.log('data: ', res);
-
+            console.log('THING:',res.data.posts)
             this.setState({
                 posts: res.data.posts,
                 loading: false,

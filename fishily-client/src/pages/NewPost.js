@@ -12,7 +12,8 @@ class NewPost extends React.Component {
             lat: '',
             lng: '',
         },
-        image: ''
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png',
+        redirectToPosts: false
     }
 
     handleInputChange = (event) => {
@@ -23,22 +24,19 @@ class NewPost extends React.Component {
     handleFormSubmit = (event) => {
         event.preventDefault();
 
-        if (this.state.image === '') {
-            this.setState({
-                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png'
-            })
-        }
-
         PostModel.create(this.state, this.props.user._id)
             .then((res) => {
-                console.log(res)
-                return <Redirect to='/posts'/>
+                this.setState({ redirectToPosts : true})
             })
     }
 
     render () {
-        console.log(this.state)
-        console.log('NEW POST PROPS: ',this.props);
+        // console.log(this.state)
+        // console.log('NEW POST PROPS: ',this.props);
+
+        if (this.state.redirectToPosts) {
+            return <Redirect to="/posts"/>
+        } 
         return (
             <div>
                 <form className="container" onSubmit={this.handleFormSubmit}>
@@ -129,7 +127,7 @@ class NewPost extends React.Component {
                         />
                     </div>
                     
-
+                    <input type="hidden" name="user" value={this.props.user._id}/>
                     <button type="submit" className="btn btn-primary">Submit Post</button>
                 </form>
             </div>
