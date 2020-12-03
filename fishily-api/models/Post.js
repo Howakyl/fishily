@@ -32,6 +32,7 @@ const postSchema = new Schema({
     },
     image: {
         type: String,
+        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png'
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

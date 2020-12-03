@@ -25,7 +25,8 @@ class PostList extends React.Component {
         return this.state.posts.map((post) => {
             return (
                 <PostCard 
-
+                    post={post}
+                    key={post._id}
                 />
             )
         })
