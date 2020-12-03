@@ -1,13 +1,10 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserModel from '../models/user';
 
 const Navbar = (props) => {
     
-    // let [ logOutUser ] = useState({props})
-
     function logOutClick() {
-        // eslint-disable-next-line
+        
         UserModel.logout(props)
         .then((res) => {
             console.log( 'THIS THING:', props);
