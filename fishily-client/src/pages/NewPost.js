@@ -9,8 +9,8 @@ class NewPost extends React.Component {
         fish: '',
         location: {
             name: 'Unknown Location',
-            lat: '',
-            lng: '',
+            lat: null,
+            lng: null,
         },
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png',
         redirectToPosts: false

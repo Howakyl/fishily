@@ -11,7 +11,10 @@ class PostModel {
     };
 
     //GET one post
-
+    static getOne = (id) => {
+        let request = axios.get(`${endPoint}/${id}`);
+        return request;
+    }
 
     //CREATE post
     static create = (post, userId) => {

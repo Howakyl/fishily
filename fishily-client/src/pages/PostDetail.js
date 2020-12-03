@@ -1,10 +1,26 @@
 import React from 'react'; 
 
-const PostDetail = (props) => {
+class PostDetail extends React.Component {
+    state = {
+        title : '',
+        description: '',
+        fish: '',
+        location: {
+            name: '',
+            lat: null,
+            lng: null,
+        },
+        image: ''
+    }
 
-        return (
-            <div>Post detail page!</div>
-        )
+    render () {
+        console.log('post detail props:',this.props)
+            return (
+                <div>
+                    hi
+                </div>
+            )
+    }
 }
 
 export default PostDetail;
