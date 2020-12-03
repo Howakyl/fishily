@@ -1,6 +1,52 @@
 import { Link } from 'react-router-dom';
+import UserModel from '../models/user';
 
-const Navbar = () => {
+const Navbar = (props) => {
+    
+    function logOutClick() {
+        
+        UserModel.logout(props)
+        .then((res) => {
+            console.log( 'THIS THING:', props);
+            props.setUser({})
+        })
+    }
+
+    function loginNav() {
+        if(!props.user.username) {
+            return (
+                <>
+                    <li className="nav-item active">
+                        <Link className="nav-link" to="/login">Log In</Link>
+                    </li>
+                    <li className="nav-item active">
+                        <Link className="nav-link" to="/signup">Sign Up</Link>
+                    </li>
+                </>
+            )
+        } else {
+            return (
+                <>
+                <li className="nav-item ">
+                    <Link className="nav-link" to="/" onClick={logOutClick}>Log Out</Link>
+                </li>
+                </>
+            )
+        }
+    }
+
+    function renderCreatePost() {
+        if(props.user.username) {
+            return (
+                <>
+                    <li className="nav-item active">
+                        <Link className="nav-link" to='/posts/new'>New Post</Link>
+                    </li>
+                </>
+            )
+        }
+    }
+
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">Fishily</Link>
@@ -14,16 +60,11 @@ const Navbar = () => {
                     <Link className="nav-link" to="/users">All users</Link>
                 </li>
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/signup">Sign Up</Link>
+                    <Link className="nav-link" to="/posts">All Posts</Link>
                 </li>
-                {/* <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div className="dropdown-menu" aria-labelledby="dropdown04">
-                        <a className="dropdown-item" href="#">Action</a>
-                        <a className="dropdown-item" href="#">Another action</a>
-                        <a className="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li> */}
+
+                {renderCreatePost()}
+                {loginNav()}
                 </ul>
                 {/* <form className="form-inline my-2 my-md-0">
                 <input className="form-control" type="text" placeholder="Search"/>

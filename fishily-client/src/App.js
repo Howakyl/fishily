@@ -1,13 +1,16 @@
-import React from 'react';
-import routes from './config/routes';
+import React , { useState } from 'react';
 import './App.css';
+import Routes from './config/routes';
 import Navbar from './components/Navbar';
 
 function App() {
+
+  let [ user , setUser ] = useState({});
+
   return (
     <div>
-    <Navbar />
-      { routes }
+    <Navbar user={user} setUser={setUser}/>
+      <Routes user={user} setUser={setUser}/>
     </div>
   );
 };
