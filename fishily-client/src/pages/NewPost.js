@@ -8,7 +8,7 @@ class NewPost extends React.Component {
         description: '',
         fish: '',
         location: {
-            name: '',
+            name: 'Unknown Location',
             lat: '',
             lng: '',
         },

@@ -7,6 +7,7 @@ import SignUp from '../pages/SignUp';
 import LogIn from '../pages/LogIn';
 import PostList from '../pages/PostList';
 import NewPost from '../pages/NewPost';
+import PostDetail from '../pages/PostDetail';
 
 function Routes (props) {
 
@@ -20,6 +21,7 @@ function Routes (props) {
             <Route exact path='/posts' component={ PostList }/>
             {/* <Route path='/posts/new' component={ NewPost }/> */}
             <Route exact path='/posts/new' render={() => <NewPost user={props.user} setUser={props.setUser}/>}/>
+            <Route exact path='/posts/id' render={() => <PostDetail user={props.user} setUser={props.setUser}/>}/>
         </Switch>
     )
 }
