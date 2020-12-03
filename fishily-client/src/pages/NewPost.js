@@ -1,4 +1,6 @@
 import React from 'react';
+import PostModel from '../models/post';
+import { Redirect } from 'react-router-dom';
 
 class NewPost extends React.Component {
     state = {
@@ -17,12 +19,26 @@ class NewPost extends React.Component {
         this.setState({ [event.target.name] : event.target.value });
     };
 
-    handleFormSubmit = (event) => {
 
+    handleFormSubmit = (event) => {
+        event.preventDefault();
+
+        if (this.state.image === '') {
+            this.setState({
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png'
+            })
+        }
+
+        PostModel.create(this.state, this.props.user._id)
+            .then((res) => {
+                console.log(res)
+                return <Redirect to='/posts'/>
+            })
     }
 
     render () {
         console.log(this.state)
+        console.log('NEW POST PROPS: ',this.props);
         return (
             <div>
                 <form className="container" onSubmit={this.handleFormSubmit}>
@@ -84,6 +100,7 @@ class NewPost extends React.Component {
                                 id="latInput" 
                                 value={this.state.location.lat}
                                 name="location.lat"
+                                step=".01"
                             />
                         </div>
                         <div className="form-group col">
@@ -95,6 +112,7 @@ class NewPost extends React.Component {
                                 id="lngInput" 
                                 value={this.state.location.lng}
                                 name="location.lng"
+                                step=".01"
                             />
                         </div>
                     </section>
