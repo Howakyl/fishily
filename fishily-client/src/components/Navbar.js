@@ -16,7 +16,7 @@ const Navbar = (props) => {
         if(!props.user.username) {
             return (
                 <>
-                    <li >
+                    <li className="nav-item active">
                         <Link className="nav-link" to="/login">Log In</Link>
                     </li>
                     <li className="nav-item active">
@@ -27,7 +27,7 @@ const Navbar = (props) => {
         } else {
             return (
                 <>
-                <li className="nav-item active">
+                <li className="nav-item ">
                     <Link className="nav-link" to="/" onClick={logOutClick}>Log Out</Link>
                 </li>
                 </>

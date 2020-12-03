@@ -21,10 +21,20 @@ class PostList extends React.Component {
         });
     };
 
+    renderPosts () {
+        return this.state.posts.map((post) => {
+            return (
+                <PostCard 
+
+                />
+            )
+        })
+    }
+
     render () {
         return (
             <div>
-                <PostCard />
+                {this.renderPosts()}
             </div>
         )
     }
