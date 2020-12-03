@@ -11,12 +11,12 @@ function Routes (props) {
     // const user = props.user;
     return (
         <Switch >
-            <Route exact path='/' render={() => <Home user={props.user} setUser={props.setUser}/>}  />
+            <Route exact path='/' render={() => <Home user={props.user} />}  />
             <Route exact path='/users' component={ UserList }/>
             <Route exact path='/users/:id' component={ UserShow }/>
             <Route path='/signup' component={ SignUp }/>
-            {/* <Route path='/login' component={ LogIn } user={user}/> */}
             <Route render={() => <LogIn user={props.user} setUser={props.setUser}/>}/>
+            <Route render={() => <SignUp user={props.user} setUser={props.setUser}/>}/>
         </Switch>
     )
 }

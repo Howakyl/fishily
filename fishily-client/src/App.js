@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div>
-    <Navbar />
+    <Navbar user={user} setUser={setUser}/>
       <Routes user={user} setUser={setUser}/>
     </div>
   );
