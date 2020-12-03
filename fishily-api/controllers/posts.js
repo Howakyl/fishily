@@ -28,7 +28,8 @@ const show = (req,res) => {
 // ADD POSTS
 const create = (req,res) => {
 
-    db.User.findById(req.params.id)
+    const userId = req.params.id;
+    db.User.findById(userId)
         .then((foundUser) => {
             // console.log('FOUND USER:' , foundUser);
             db.Post.create(req.body)
