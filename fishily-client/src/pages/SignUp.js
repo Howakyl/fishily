@@ -11,7 +11,7 @@ class SignUp extends React.Component {
         bio: '',
     };
 
-    handleInputchange = (event) => {
+    handleInputChange = (event) => {
 
         this.setState({ [event.target.name] : event.target.value });
     };
@@ -40,7 +40,7 @@ class SignUp extends React.Component {
                             <label htmlFor="usernameInput">username</label>
                             <small className="form-text text-muted">required</small>
                             <input
-                                onChange={this.handleInputchange}
+                                onChange={this.handleInputChange}
                                 type="text" 
                                 className="form-control" 
                                 id="usernameInput"
@@ -52,7 +52,7 @@ class SignUp extends React.Component {
                             <label htmlFor="passInput">Password</label>
                             <small className="form-text text-muted">required - Don't use a sensitive password!</small>
                             <input
-                                onChange={this.handleInputchange}
+                                onChange={this.handleInputChange}
                                 type="password" 
                                 className="form-control" 
                                 id="passInput"
@@ -63,7 +63,7 @@ class SignUp extends React.Component {
                         <div className="form-group">
                             <label htmlFor="firstNameInput">first name</label>
                             <input
-                                onChange={this.handleInputchange}
+                                onChange={this.handleInputChange}
                                 type="text" 
                                 className="form-control" 
                                 id="firstNameInput"
@@ -74,7 +74,7 @@ class SignUp extends React.Component {
                         <div className="form-group">
                             <label htmlFor="lastNameInput">last name</label>
                             <input
-                                onChange={this.handleInputchange}
+                                onChange={this.handleInputChange}
                                 type="text" 
                                 className="form-control" 
                                 id="lastNameInput" 
@@ -85,7 +85,7 @@ class SignUp extends React.Component {
                         <div className="form-group">
                             <label htmlFor="bioInput">Create a bio:</label>
                             <textarea
-                                onChange={this.handleInputchange}
+                                onChange={this.handleInputChange}
                                 type="text" 
                                 className="form-control" 
                                 id="bioInput" 

@@ -22,6 +22,7 @@ const postSchema = new Schema({
     location: {
         name: {
             type: String,
+            default: 'Unknown',
         },
         lat: {
             type: Number,
