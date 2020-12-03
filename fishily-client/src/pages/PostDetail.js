@@ -1,12 +1,10 @@
 import React from 'react'; 
 
-class PostDetail extends React.Component {
+const PostDetail = (props) => {
 
-    render () {
         return (
             <div>Post detail page!</div>
         )
-    }
 }
 
 export default PostDetail;
