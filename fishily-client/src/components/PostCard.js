@@ -10,9 +10,10 @@ const PostCard  = (props) => {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                        <h5 className="card-title">{props.post.title}</h5>
+                        <h6>By: {props.post.user}</h6>
+                        <p className="card-text">{props.post.description}</p>
+                        <p className="card-text"><small className="text-muted">Posted On: {props.post.date}</small></p>
                     </div>
                 </div>
             </div>

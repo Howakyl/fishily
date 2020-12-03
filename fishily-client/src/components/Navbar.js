@@ -47,7 +47,6 @@ const Navbar = (props) => {
         }
     }
 
-    console.log(loginNav())
     return (
         <nav className="navbar navbar-expand-md navbar-dark bg-dark">
             <Link className="navbar-brand" to="/">Fishily</Link>
