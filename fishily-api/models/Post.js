@@ -12,11 +12,17 @@ const postSchema = new Schema({
         type: String,
         maxlength: 300,
     },
+    fish: {
+        type: String,
+    },
     date: {
         type: Date,
         default: Date.now,
     },
     location: {
+        name: {
+            type: String,
+        },
         lat: {
             type: Number,
         },
@@ -26,6 +32,7 @@ const postSchema = new Schema({
     },
     image: {
         type: String,
+        default: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png'
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

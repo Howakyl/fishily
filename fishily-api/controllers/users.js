@@ -1,3 +1,5 @@
+const bcrypt = require('bcryptjs');
+
 const db = require("../models");
 
 const index = (req, res) => {
@@ -26,14 +28,41 @@ const show = (req, res) => {
 
 const create = (req,res) => {
 
-    db.User.create(req.body)
-        .then((createdUser) => {
-            res.json({ user: createdUser});
+    db.User.findOne({username : req.body.username}, (err, user) => {
+        if(err) return console.log(err);
+
+        if (user) {
+            console.log('User Account Already Exists');
+            return res.json({ Error: 'User already exists.'});
+        };
+
+        bcrypt.genSalt(10, (err, salt) => {
+            // CHANGE THIS TO JUST LOG ERROR <----
+            if (err) return console.log(err); 
+
+            bcrypt.hash(req.body.password, salt, (err, hashedPassword) => {
+                if (err) return console.log(err);
+
+                const newUser = {
+                    username: req.body.username,
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    password: hashedPassword,
+                    bio: req.body.password,
+                }
+
+                db.User.create(newUser)
+                    .then((createdUser) => {
+                        res.json({ user: createdUser});
+                    })
+                    .catch((err) => {
+                        console.log('error creating user: ', err);
+                        res.json({ Error: 'Unable to create user.' });
+                    });
+            })
         })
-        .catch((err) => {
-            console.log('error creating user: ', err);
-            res.json({ Error: 'Unable to create user.' });
-        });
+
+    });
 };
 
 const update = (req,res) => {
@@ -55,12 +84,52 @@ const destroy = (req,res) => {
 
     db.User.findByIdAndDelete(req.params.id)
         .then((deletedUser) => {
+
+            db.Post.deleteMany({_id: {$in: deletedUser.posts }} , (err, result) => {
+                if (err) return console.log(err);
+                console.log('result from deleteMany: ', result);
+            });
+
             res.json({ user: deletedUser });
         })
         .catch((err) => {
             console.log('error deleting user : ', err);
             res.json({ Error: 'unable to delete user.'});
         });
+};
+
+const logIn = (req,res) => {
+
+    db.User.findOne({ username: req.body.username} , (err,user) => {
+        if (err) return console.log(err);
+
+        if(!user) {
+            console.log('Login Route: No User Found');
+            res.json({ Error: 'no user found.'});
+        };
+
+        // Verify user password with login password
+        bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
+            if (err) return console.log('error comparing passwords');
+            console.log(isMatch)
+
+            if(isMatch) {
+                req.session.currentUser = user;
+                console.log('successfully logged in!')
+                res.send(req.session.currentUser);
+            };
+        });
+    });
+};
+
+const logOut = (req,res) => {
+
+    if (req.session.currentUser) {
+        req.session.destroy((err) => {
+            if (err) return console.log('error destroying session');
+            console.log('successfully logged out!');
+        });
+    };
 };
 
 
@@ -70,4 +139,6 @@ module.exports = {
     create,
     update,
     destroy,
+    logIn,
+    logOut,
 }
