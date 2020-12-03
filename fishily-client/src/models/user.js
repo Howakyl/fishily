@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import 'react-router-dom';
+
 const endPoint = `http://localhost:4000/api/fishily/users`;
 const logInEndPoint = `http://localhost:4000/api/fishily/users/login`;
 
@@ -28,6 +28,7 @@ class UserModel {
         return request;
     }
 
+    //LOGOUT user
     static logout = (user) => {
         let request = axios.delete(logInEndPoint , user);
         return request;

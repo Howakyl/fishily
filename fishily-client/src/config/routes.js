@@ -10,7 +10,6 @@ import NewPost from '../pages/NewPost';
 
 function Routes (props) {
 
-    // const user = props.user;
     return (
         <Switch >
             <Route exact path='/' render={() => <Home user={props.user} />}  />
