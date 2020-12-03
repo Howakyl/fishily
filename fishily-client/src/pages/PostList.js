@@ -1,10 +1,13 @@
 import React from 'react';
+import PostCard from '../components/PostCard';
 
 class PostList extends React.Component {
 
     render () {
         return (
-            <div>These are all the posts!</div>
+            <div>
+                <PostCard />
+            </div>
         )
     }
 }
