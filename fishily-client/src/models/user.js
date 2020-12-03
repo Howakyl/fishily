@@ -27,6 +27,11 @@ class UserModel {
         let request = axios.post(logInEndPoint , user);
         return request;
     }
+
+    static logout = (user) => {
+        let request = axios.delete(logInEndPoint , user);
+        return request;
+    }
 };
 
 export default UserModel;

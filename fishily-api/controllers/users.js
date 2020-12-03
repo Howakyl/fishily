@@ -127,6 +127,7 @@ const logOut = (req,res) => {
     if (req.session.currentUser) {
         req.session.destroy((err) => {
             if (err) return console.log('error destroying session');
+            console.log('successfully logged out!');
         });
     };
 };

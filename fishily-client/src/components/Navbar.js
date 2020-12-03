@@ -1,7 +1,20 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import UserModel from '../models/user';
 
 const Navbar = (props) => {
     
+    // let [ logOutUser ] = useState({props})
+
+    function logOutClick() {
+        // eslint-disable-next-line
+        UserModel.logout(props)
+        .then((res) => {
+            console.log( 'THIS THING:', props);
+            props.setUser({})
+        })
+    }
+
     function loginNav() {
         if(!props.user.username) {
             return (
@@ -18,7 +31,7 @@ const Navbar = (props) => {
             return (
                 <>
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/">Log Out</Link>
+                    <Link className="nav-link" to="/" onClick={logOutClick}>Log Out</Link>
                 </li>
                 </>
             )
