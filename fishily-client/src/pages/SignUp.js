@@ -9,6 +9,7 @@ class SignUp extends React.Component {
         lastName: '',
         password: '',
         bio: '',
+        redirectToPosts: false,
     };
 
     handleInputChange = (event) => {
@@ -21,7 +22,8 @@ class SignUp extends React.Component {
 
         UserModel.create(this.state)
         .then((res) => {
-            this.props.history.push('/login');
+            // this.props.history.push('/login');
+            this.setState({ redirectToPosts : true })
         })
     }
     
@@ -29,6 +31,10 @@ class SignUp extends React.Component {
     render () {
 
         console.log(this.props)
+        if(this.state.redirectToPosts) {
+            return <Redirect to='/login'/>
+        }
+
         if(this.props.user.username) {
             return <Redirect to='/'/>
         } else {
