@@ -45,7 +45,8 @@ class PostDetail extends React.Component {
         }
 
         if (!this.state.loading) {
-            console.log('location: ' ,this.state.post.location)
+            // console.log('location: ' ,this.state.post.location)
+            // console.log('aaaa' , this.state.location)
             return (
                 <div className="container">
                     <div className="post-detail-container">
