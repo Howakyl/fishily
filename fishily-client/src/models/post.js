@@ -27,6 +27,12 @@ class PostModel {
         let request = axios.delete(`${endPoint}/${postId}`);
         return request;
     }
+
+    //EDIT post
+    static update(postId, updatedPost) {
+        let request = axios.put(`${endPoint}/${postId}` , updatedPost);
+        return request;
+    }
 };
 
 export default PostModel;
