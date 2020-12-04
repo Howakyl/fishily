@@ -1,6 +1,7 @@
 import React from 'react';
 import UserModel from '../models/user';
 import UserCard from '../components/UserCard';
+import './UserList.css';
 
 class UserList extends React.Component {
     state = {
@@ -25,10 +26,12 @@ class UserList extends React.Component {
         // console.log(this.state)
         return this.state.users.map((user) => {
             return (
-                <UserCard
-                    user={user}
-                    key={user._id}
-                />
+                <li className="userList-card">
+                    <UserCard
+                        user={user}
+                        key={user._id}
+                    />
+                </li>
             )
         })
     }
@@ -37,8 +40,8 @@ class UserList extends React.Component {
         if(!this.state.loading) {
             return (
                 <div>
-                    <h2>users!</h2>
-                    <ul>
+                    <h2 className="userList-title">Fishily users:</h2>
+                    <ul className="userList-container">
                     
                         {this.renderUsers()}
                     </ul>

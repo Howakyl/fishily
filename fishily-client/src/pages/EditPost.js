@@ -1,46 +1,68 @@
 import React from 'react';
 import PostModel from '../models/post';
-import { Redirect } from 'react-router-dom';
+import './EditPost.css';
 
-class NewPost extends React.Component {
+class EditPost extends React.Component {
     state = {
         title : '',
         description: '',
         fish: '',
         location: {
-            name: 'Unknown Location',
+            name: '',
             lat: null,
             lng: null,
         },
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png',
-        redirectToPosts: false
+        image: '',
+        post: {},
+        loading: true
     }
+
+    componentDidMount() {
+        const postId = this.props.match.params.id;
+        PostModel.getOne(postId)
+            .then((data) => {
+                const res = data.data.post;
+                this.setState({ 
+                    
+                    title : res.title,
+                    description: res.description,
+                    fish: res.fish,
+                    location : {
+                        name: res.location.name,
+                        lat: res.location.lat,
+                        lng: res.location.lng
+                    },
+                    image: res.image,
+                    loading: false,
+                })
+            })
+    };
 
     handleInputChange = (event) => {
         this.setState({ [event.target.name] : event.target.value });
     };
 
-
     handleFormSubmit = (event) => {
         event.preventDefault();
 
-        PostModel.create(this.state, this.props.user._id)
+        const postId = this.props.match.params.id;
+        PostModel.update(postId, this.state)
             .then((res) => {
-                this.setState({ redirectToPosts : true})
-            })
-    }
+                console.log('updated post: ' , res);
+                this.props.history.push(`/posts/${postId}`);
+            });
+    };
+    
+    render() {
+        console.log(this.state)
 
-    render () {
-        // console.log(this.state)
-        // console.log('NEW POST PROPS: ',this.props);
-
-        if (this.state.redirectToPosts) {
-            return <Redirect to="/posts"/>
-        } 
+        if (this.state.loading) {
+            return <div>Loading...</div>
+        }
         return (
-            <div>
-                <form className="container" onSubmit={this.handleFormSubmit}>
-                    <h1>submit a new post!</h1>
+            <div className="">
+                <form className="container editPost-form" onSubmit={this.handleFormSubmit}>
+                        <h1>Edit your post!</h1>
                     <div className="form-group">
                         <label htmlFor="titleInput">Title</label>
                         <small className="form-text text-muted">required</small>
@@ -127,12 +149,11 @@ class NewPost extends React.Component {
                         />
                     </div>
                     
-                    {/* <input type="hidden" name="user" value={this.props.user._id}/> */}
-                    <button type="submit" className="btn btn-primary">Submit Post</button>
+                    <button type="submit" className="btn btn-primary">Edit Post</button>
                 </form>
             </div>
         );
-    };
-};
+    }
+}
 
-export default NewPost;
+export default EditPost;

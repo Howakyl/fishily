@@ -48,8 +48,10 @@ const Navbar = (props) => {
     }
 
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            <Link className="navbar-brand" to="/">Fishily</Link>
+        <nav className="navbar navbar-expand-md navbar-light">
+            <div className="nav-title">
+                <Link className="navbar-brand" to="/">Fishily</Link>
+            </div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
