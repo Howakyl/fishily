@@ -22,6 +22,10 @@ nav a {
   font-size: 2rem;
 }
 
+.navbar-title {
+  font-family: 'Pacifico' ,cursive;
+}
+
 button {
   background-color: #1170C3 !important;
 }
