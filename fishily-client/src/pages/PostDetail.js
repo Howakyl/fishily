@@ -56,9 +56,10 @@ class PostDetail extends React.Component {
                             <small>Caught at: {this.state.post.location.name}</small>
                             <div>
                                 <button
+                                    className="btn btn-primary"
                                     onClick={() => this.deletePost(this.state.post._id)}
                                 >Delete Post</button>
-                                <button>
+                                <button className="btn btn-primary post-detail-edit-btn">
 
                                 <Link to={`/posts/${this.state.post._id}/edit`}>Edit Post</Link>
                                 </button>

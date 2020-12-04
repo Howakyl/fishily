@@ -1,4 +1,5 @@
 .post-detail-container {
+    margin-top: 2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -8,4 +9,9 @@
 
 .post-detail-img {
     max-width: 400px;
+}
+
+.post-detail-edit-btn a {
+    color: white ;
+    text-decoration: none;
 }

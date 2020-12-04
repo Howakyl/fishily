@@ -1,4 +1,40 @@
 * {
   box-sizing: border-box;
+  font-family: 'Poppins' , sans-serif;
 }
 
+nav {
+  background-color: #EEEEEE !important;
+  /* display: flex !important;
+  justify-content: space-evenly !important; */
+}
+
+nav a {
+  color: #1170C3 !important;
+}
+
+.nav-title a {
+  color: #234a35 !important;
+  font-size: 2rem;
+}
+
+
+
+.home-container {
+  padding-top: 5rem;
+  background-image: url('https://www.leisurepro.com/blog/wp-content/uploads/2019/05/shutterstock_651678592-1366x800@2x.jpg');
+  background-size: cover;
+  height: 100vh;
+  color: #f1f1f1;
+}
+
+.home-container h1 {
+  font-size: 5rem;
+  padding-left: 1rem;
+  font-weight: 600;
+  text-shadow: 1px 1px black;
+}
+
+.home-container p {
+  padding-left: 1rem;
+}
