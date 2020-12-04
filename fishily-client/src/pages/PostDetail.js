@@ -15,7 +15,8 @@ class PostDetail extends React.Component {
         },
         image: '',
         post: {},
-        redirectToPosts: false
+        redirectToPosts: false,
+        loading: true
     }
 
     componentDidMount() {
@@ -25,6 +26,7 @@ class PostDetail extends React.Component {
             .then((data) => {
                 this.setState({ 
                     post: data.data.post,
+                    loading: false
                 })
             })
     };
@@ -41,13 +43,17 @@ class PostDetail extends React.Component {
         if (this.state.redirectToPosts) {
             return <Redirect to="/posts"/>
         }
+
+        if (!this.state.loading) {
             return (
                 <div className="container">
                     <div className="post-detail-container">
                     <img src={this.state.post.image} alt="fish" className="post-detail-img img-fluid"/>
                         <section className="post-detail-info">
                             <h3>{this.state.post.title}</h3>
+                            <h5>Fish Caught: {this.state.post.fish}</h5>
                             <p>{this.state.post.description}</p>
+                            <small>Caught at: {this.state.post.location.name}</small>
                             <div>
                                 <button
                                     onClick={() => this.deletePost(this.state.post._id)}
@@ -61,6 +67,9 @@ class PostDetail extends React.Component {
                     </div>
                 </div>
             )
+        } else {
+            return <h1>Loading...</h1>
+        }
     }
 }
 
