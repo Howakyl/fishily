@@ -25,7 +25,7 @@ class LogIn extends React.Component {
     render () {
         console.log('PROPS: ',this.props)
         if(this.props.user.username) {
-            return <Redirect to='/'/>
+            return <Redirect to='/posts'/>
         } else {
             return (
                 <div>

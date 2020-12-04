@@ -1,6 +1,7 @@
 import React from 'react';
 import PostCard from '../components/PostCard';
 import PostModel from '../models/post';
+import './PostList.css';
 
 class PostList extends React.Component {
 
@@ -34,7 +35,7 @@ class PostList extends React.Component {
 
     render () {
         return (
-            <div>
+            <div className="postList-container container">
                 {this.renderPosts()}
             </div>
         )

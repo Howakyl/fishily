@@ -18,7 +18,9 @@ nav a {
   font-size: 2rem;
 }
 
-
+button {
+  background-color: #1170C3 !important;
+}
 
 .home-container {
   padding-top: 5rem;
