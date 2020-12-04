@@ -21,6 +21,12 @@ class PostModel {
         let request = axios.post(`${endPoint}/${userId}` , post);
         return request;
     }
+
+    //DELETE post
+    static delete(postId) {
+        let request = axios.delete(`${endPoint}/${postId}`);
+        return request;
+    }
 };
 
 export default PostModel;
