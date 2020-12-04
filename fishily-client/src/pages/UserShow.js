@@ -1,6 +1,7 @@
 import React from 'react';
 import UserModel from '../models/user';
 import UserDetailCard from '../components/UserDetailCard';
+import './UserShow.css';
 
 class UserShow extends React.Component {
 
@@ -22,12 +23,20 @@ class UserShow extends React.Component {
     };
 
 
+    renderPosts () {
+        if (this.state.user.posts.length > 0 ) {
+            return <li>{this.state.user.username} has: {this.state.user.posts.length} posts.</li>
+        }
+    }
+
     render () {
         if (!this.state.loading) {
             return (
-                <div>
-                    <h1>User show</h1>
-                    <UserDetailCard user={this.state.user}/>
+                <div className="userShow-container">
+                    <h1>{this.state.user.username}'s page</h1>
+                    <UserDetailCard user={this.state.user}> 
+                    </UserDetailCard>
+                    <p>{this.renderPosts()}</p>
                 </div>
             );
         } else {

@@ -3,6 +3,10 @@
   font-family: 'Poppins' , sans-serif;
 }
 
+body {
+  background-color: #b4c9af;
+}
+
 nav {
   background-color: #EEEEEE !important;
   /* display: flex !important;

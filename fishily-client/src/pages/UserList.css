@@ -1,0 +1,19 @@
+.userList-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 0;
+}
+
+.userList-card {
+    margin: auto;
+    margin-top: 2rem;
+    list-style: none;
+    padding: none;
+}
+
+.userList-title {
+    text-align: center;
+    margin-top: 2rem;
+}
