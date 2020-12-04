@@ -9,9 +9,28 @@
 
 .post-detail-img {
     max-width: 400px;
+    border-radius: 10px;
 }
 
 .post-detail-edit-btn a {
     color: white ;
     text-decoration: none;
+}
+
+.post-detail-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.post-detail-description {
+    background-color: #DDDDDD;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 950px) {
+    .post-detail-info{
+        margin-top: 2rem;
+    }
 }

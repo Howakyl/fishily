@@ -50,11 +50,12 @@ class PostDetail extends React.Component {
                     <div className="post-detail-container">
                     <img src={this.state.post.image} alt="fish" className="post-detail-img img-fluid"/>
                         <section className="post-detail-info">
-                            <h3>{this.state.post.title}</h3>
-                            <h5>Fish Caught: {this.state.post.fish}</h5>
-                            <p>{this.state.post.description}</p>
+                            <h2>{this.state.post.title}</h2>
+                            <h5><em>Fish Caught:</em> {this.state.post.fish}</h5>
+                            <hr/>
+                            <p className="post-detail-description">{this.state.post.description}</p>
                             <small>Caught at: {this.state.post.location.name}</small>
-                            <div>
+                            <div className="post-detail-buttons">
                                 <button
                                     className="btn btn-primary"
                                     onClick={() => this.deletePost(this.state.post._id)}
