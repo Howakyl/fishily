@@ -1,7 +1,7 @@
-# fishily
+# Fishily
 
 ### What is fishily? 
-Fishily is an app built for local fishermen/women to find and share their favorite fishing spots! 
+Fishily is an app built in the MERN stack (MongoDB, Express, React, Node). Made for local fishermen/women to find and share their favorite fishing spots! 
 
 Upon landing on the "home" page, users will be met with a short introduction into what the app's purpose is. There will be a button prompting them to sign in if they don't have an account. 
 
@@ -21,6 +21,10 @@ On Fishily, users can:
     * this database will have a fishes' name, genus, species, a short bio, and an image!
 
 *  (FUTURE FEATURE) : Fishily will connect to the fishbase API, an external API that contains thousands of records of detailed fish info.
+
+### Technologies Used: 
+* React | Express | MongoDB | Node.js | axios | Javascript(ES6) | CSS3 | Bootstrap | JSX | 
+
 
 ### Wireframes
 
