@@ -8,6 +8,7 @@ import LogIn from '../pages/LogIn';
 import PostList from '../pages/PostList';
 import NewPost from '../pages/NewPost';
 import PostDetail from '../pages/PostDetail';
+import EditPost from '../pages/EditPost';
 
 function Routes (props) {
 
@@ -21,6 +22,7 @@ function Routes (props) {
             <Route exact path='/posts' component={ PostList }/>
             {/* <Route path='/posts/new' component={ NewPost }/> */}
             <Route exact path='/posts/new' render={() => <NewPost user={props.user} setUser={props.setUser}/>}/>
+            <Route exact path='/posts/:id/edit' component={ EditPost } />
             <Route exact path='/posts/:id' component={ PostDetail }/>
         </Switch>
     )

@@ -1,6 +1,6 @@
 import React from 'react'; 
 import PostModel from '../models/post';
-import { Redirect } from 'react-router-dom';
+import { Redirect , Link } from 'react-router-dom';
 import './PostDetail.css';
 
 class PostDetail extends React.Component {
@@ -52,6 +52,10 @@ class PostDetail extends React.Component {
                                 <button
                                     onClick={() => this.deletePost(this.state.post._id)}
                                 >Delete Post</button>
+                                <button>
+
+                                <Link to={`/posts/${this.state.post._id}/edit`}>Edit Post</Link>
+                                </button>
                             </div>
                         </section>
                     </div>
