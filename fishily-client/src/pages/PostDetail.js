@@ -39,7 +39,7 @@ class PostDetail extends React.Component {
     render () {
         console.log('post detail props:',this.state.post)
         if (this.state.redirectToPosts) {
-            <Redirect to="/posts"/>
+            return <Redirect to="/posts"/>
         }
             return (
                 <div className="container">
@@ -48,6 +48,11 @@ class PostDetail extends React.Component {
                         <section className="post-detail-info">
                             <h3>{this.state.post.title}</h3>
                             <p>{this.state.post.description}</p>
+                            <div>
+                                <button
+                                    onClick={() => this.deletePost(this.state.post._id)}
+                                >Delete Post</button>
+                            </div>
                         </section>
                     </div>
                 </div>

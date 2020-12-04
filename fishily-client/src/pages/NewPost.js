@@ -127,7 +127,7 @@ class NewPost extends React.Component {
                         />
                     </div>
                     
-                    <input type="hidden" name="user" value={this.props.user._id}/>
+                    {/* <input type="hidden" name="user" value={this.props.user._id}/> */}
                     <button type="submit" className="btn btn-primary">Submit Post</button>
                 </form>
             </div>
