@@ -45,6 +45,7 @@ class PostDetail extends React.Component {
         }
 
         if (!this.state.loading) {
+            console.log('location: ' ,this.state.post.location)
             return (
                 <div className="container">
                     <div className="post-detail-container">
@@ -54,7 +55,7 @@ class PostDetail extends React.Component {
                             <h5><em>Fish Caught:</em> {this.state.post.fish}</h5>
                             <hr/>
                             <p className="post-detail-description">{this.state.post.description}</p>
-                            <small>Caught at: {this.state.post.location.name}</small>
+                            <small>Caught at: {this.state.post.location}</small>
                             <div className="post-detail-buttons">
                                 <button
                                     className="btn btn-primary"
