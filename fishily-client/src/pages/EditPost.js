@@ -1,5 +1,6 @@
 import React from 'react';
 import PostModel from '../models/post';
+import './EditPost.css';
 
 class EditPost extends React.Component {
     state = {
@@ -59,8 +60,8 @@ class EditPost extends React.Component {
             return <div>Loading...</div>
         }
         return (
-            <div>
-                <form className="container" onSubmit={this.handleFormSubmit}>
+            <div className="">
+                <form className="container editPost-form" onSubmit={this.handleFormSubmit}>
                         <h1>Edit your post!</h1>
                     <div className="form-group">
                         <label htmlFor="titleInput">Title</label>
@@ -100,7 +101,7 @@ class EditPost extends React.Component {
 
                     <section className="row">
                         <div className="form-group col">
-                            <label htmlFor="locationInput">Where Did You Catch Your Fish?</label>
+                            <label htmlFor="locationInput">Where Was Your Catch?</label>
                             <input
                                 onChange={this.handleInputChange}
                                 type="text" 

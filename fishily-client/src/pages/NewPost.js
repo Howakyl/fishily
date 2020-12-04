@@ -79,7 +79,7 @@ class NewPost extends React.Component {
 
                     <section className="row">
                         <div className="form-group col">
-                            <label htmlFor="locationInput">Where Did You Catch Your Fish?</label>
+                            <label htmlFor="locationInput">Where Was Your Catch?</label>
                             <input
                                 onChange={this.handleInputChange}
                                 type="text" 
