@@ -1,5 +1,6 @@
 import React from 'react'; 
 import PostModel from '../models/post';
+import { Redirect } from 'react-router-dom';
 import './PostDetail.css';
 
 class PostDetail extends React.Component {
@@ -13,7 +14,8 @@ class PostDetail extends React.Component {
             lng: null,
         },
         image: '',
-        post: {}
+        post: {},
+        redirectToPosts: false
     }
 
     componentDidMount() {
@@ -23,13 +25,22 @@ class PostDetail extends React.Component {
             .then((data) => {
                 this.setState({ 
                     post: data.data.post,
-                    loading: false
                 })
             })
-    }
+    };
+
+    deletePost = (id) => {
+        PostModel.delete(id)
+            .then((res) => {
+                this.setState({redirectToPosts : true})
+            })
+    } 
 
     render () {
         console.log('post detail props:',this.state.post)
+        if (this.state.redirectToPosts) {
+            <Redirect to="/posts"/>
+        }
             return (
                 <div className="container">
                     <div className="post-detail-container">

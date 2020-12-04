@@ -31,9 +31,6 @@ class PostList extends React.Component {
         })
     };
 
-    // deletePost = (id) => {
-    //     PostModel.
-    // } 
 
     render () {
         return (
