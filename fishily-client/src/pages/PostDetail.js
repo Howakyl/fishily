@@ -54,8 +54,8 @@ class PostDetail extends React.Component {
                         <section className="post-detail-info">
 
                             <div className="user-info">
-                                <img className="post-detail-user-img img-fluid" src={this.props.user.picture} alt={this.props.user.username}/>
-                                <p className="post-detail-username">{this.props.user.username}</p>
+                                <img className="post-detail-user-img img-fluid" src={this.state.post.user.picture} alt={this.props.user.username}/>
+                                <p className="post-detail-username">{this.state.post.user.username}</p>
                             </div>
                             <h2>{this.state.post.title}</h2>
                             <h5><em>Fish Caught:</em> {this.state.post.fish}</h5>
