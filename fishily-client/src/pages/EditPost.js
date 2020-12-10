@@ -4,14 +4,17 @@ import './EditPost.css';
 
 class EditPost extends React.Component {
     state = {
-        // title : '',
-        // description: '',
-        // fish: '',
+        title : '',
+        description: '',
+        fish: '',
         // location: {
         //     name: '',
         //     lat: null,
         //     lng: null,
         // },
+        locationName: '',
+        lat: undefined,
+        lng: undefined,
         image: '',
         post: {},
         loading: true
@@ -22,16 +25,20 @@ class EditPost extends React.Component {
         PostModel.getOne(postId)
             .then((data) => {
                 const res = data.data.post;
+                console.log('RESPONSE: ' , res)
                 this.setState({ 
                     
                     title : res.title,
                     description: res.description,
                     fish: res.fish,
-                    location : {
-                        name: res.location.name,
-                        lat: res.location.lat,
-                        lng: res.location.lng
-                    },
+                    // location : {
+                    //     name: res.location.name,
+                    //     lat: res.location.lat,
+                    //     lng: res.location.lng
+                    // },
+                    locationName: res.locationName,
+                    lat: res.lat,
+                    lng: res.lng,
                     image: res.image,
                     loading: false,
                 })
@@ -107,8 +114,8 @@ class EditPost extends React.Component {
                                 type="text" 
                                 className="form-control" 
                                 id="locationInput" 
-                                value={this.state.location.name}
-                                name="location"
+                                value={this.state.locationName}
+                                name="locationName"
                             />
                         </div>
                         <div className="form-group col">
@@ -118,8 +125,8 @@ class EditPost extends React.Component {
                                 type="number" 
                                 className="form-control" 
                                 id="latInput" 
-                                value={this.state.location.lat}
-                                name="location.lat"
+                                value={this.state.lat}
+                                name="lat"
                                 step=".01"
                             />
                         </div>
@@ -130,8 +137,8 @@ class EditPost extends React.Component {
                                 type="number" 
                                 className="form-control" 
                                 id="lngInput" 
-                                value={this.state.location.lng}
-                                name="location.lng"
+                                value={this.state.lng}
+                                name="lng"
                                 step=".01"
                             />
                         </div>
