@@ -13,6 +13,7 @@ class PostDetail extends React.Component {
         lng: undefined,
         image: '',
         post: {},
+        user: {},
         redirectToPosts: false,
         loading: true
     }
@@ -36,13 +37,6 @@ class PostDetail extends React.Component {
             })
     } 
 
-    // renderLocationName () {
-    //     if (this.state.post.location.name) {
-    //         <small>Caught at: {this.state.post.location.name}</small>
-    //     } else {
-    //         <small>Caught at: {this.state.post.location}</small>
-    //     }
-    // }
 
     render () {
         console.log('post detail props:',this.state.post)
