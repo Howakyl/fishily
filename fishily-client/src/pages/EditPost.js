@@ -4,14 +4,14 @@ import './EditPost.css';
 
 class EditPost extends React.Component {
     state = {
-        title : '',
-        description: '',
-        fish: '',
-        location: {
-            name: '',
-            lat: null,
-            lng: null,
-        },
+        // title : '',
+        // description: '',
+        // fish: '',
+        // location: {
+        //     name: '',
+        //     lat: null,
+        //     lng: null,
+        // },
         image: '',
         post: {},
         loading: true
