@@ -8,11 +8,9 @@ class PostDetail extends React.Component {
         title : '',
         description: '',
         fish: '',
-        location: {
-            name: '',
-            lat: null,
-            lng: null,
-        },
+        locationName: '',
+        lat: undefined,
+        lng: undefined,
         image: '',
         post: {},
         redirectToPosts: false,
@@ -38,6 +36,14 @@ class PostDetail extends React.Component {
             })
     } 
 
+    // renderLocationName () {
+    //     if (this.state.post.location.name) {
+    //         <small>Caught at: {this.state.post.location.name}</small>
+    //     } else {
+    //         <small>Caught at: {this.state.post.location}</small>
+    //     }
+    // }
+
     render () {
         console.log('post detail props:',this.state.post)
         if (this.state.redirectToPosts) {
@@ -56,7 +62,7 @@ class PostDetail extends React.Component {
                             <h5><em>Fish Caught:</em> {this.state.post.fish}</h5>
                             <hr/>
                             <p className="post-detail-description">{this.state.post.description}</p>
-                            <small>Caught at: {this.state.post.location}</small>
+                            <small>Caught at: {this.state.post.locationName}</small>
                             <div className="post-detail-buttons">
                                 <button
                                     className="btn btn-primary"

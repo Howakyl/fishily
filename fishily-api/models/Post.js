@@ -19,17 +19,15 @@ const postSchema = new Schema({
         type: Date,
         default: new Date().toLocaleDateString()
     },
-    location: {
-        name: {
-            type: String,
-            default: 'Unknown',
-        },
-        lat: {
-            type: Number,
-        },
-        lng: {
-            type: Number,
-        }
+    locationName: {
+        type: String,
+        default: 'Unknown',
+    },
+    lat: {
+        type: Number,
+    },
+    lng: {
+        type: Number,
     },
     image: {
         type: String,

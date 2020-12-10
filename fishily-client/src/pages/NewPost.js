@@ -7,11 +7,9 @@ class NewPost extends React.Component {
         title : '',
         description: '',
         fish: '',
-        location: {
-            name: 'Unknown Location',
-            lat: null,
-            lng: null,
-        },
+        locationName: '',
+        lat: undefined,
+        lng: undefined,
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png',
         redirectToPosts: false
     }
@@ -85,8 +83,8 @@ class NewPost extends React.Component {
                                 type="text" 
                                 className="form-control" 
                                 id="locationInput" 
-                                value={this.state.location.name}
-                                name="location"
+                                value={this.state.locationName}
+                                name="locationName"
                             />
                         </div>
                         <div className="form-group col">
@@ -96,8 +94,8 @@ class NewPost extends React.Component {
                                 type="number" 
                                 className="form-control" 
                                 id="latInput" 
-                                value={this.state.location.lat}
-                                name="location.lat"
+                                value={this.state.lat}
+                                name="lat"
                                 step=".01"
                             />
                         </div>
@@ -108,8 +106,8 @@ class NewPost extends React.Component {
                                 type="number" 
                                 className="form-control" 
                                 id="lngInput" 
-                                value={this.state.location.lng}
-                                name="location.lng"
+                                value={this.state.lng}
+                                name="lng"
                                 step=".01"
                             />
                         </div>
