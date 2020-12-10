@@ -1,6 +1,6 @@
 import React from 'react'; 
 import PostModel from '../models/post';
-import { Redirect , Link } from 'react-router-dom';
+import { Redirect , Link, withRouter } from 'react-router-dom';
 import './PostDetail.css';
 
 class PostDetail extends React.Component {
@@ -52,6 +52,11 @@ class PostDetail extends React.Component {
                     <div className="post-detail-container">
                     <img src={this.state.post.image} alt="fish" className="post-detail-img img-fluid"/>
                         <section className="post-detail-info">
+
+                            <div>
+                                <img src={this.props.user.picture} alt="user"/>
+                                <p>{this.props.user.username}</p>
+                            </div>
                             <h2>{this.state.post.title}</h2>
                             <h5><em>Fish Caught:</em> {this.state.post.fish}</h5>
                             <hr/>
@@ -77,4 +82,4 @@ class PostDetail extends React.Component {
     }
 }
 
-export default PostDetail;
+export default withRouter(PostDetail);

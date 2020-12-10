@@ -24,6 +24,7 @@ function Routes (props) {
             <Route exact path='/posts/new' render={() => <NewPost user={props.user} setUser={props.setUser}/>}/>
             <Route exact path='/posts/:id/edit' component={ EditPost } />
             {/* <Route exact path='/posts/:id' component={ PostDetail }/> */}
+            {/* <Route exact path='/posts/:id' render={() => <PostDetail user={props.user} setUser={props.setUser}/>} /> */}
             <Route exact path='/posts/:id' render={() => <PostDetail user={props.user} setUser={props.setUser}/>} />
         </Switch>
     )
