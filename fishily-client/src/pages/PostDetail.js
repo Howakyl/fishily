@@ -5,15 +5,15 @@ import './PostDetail.css';
 
 class PostDetail extends React.Component {
     state = {
-        title : '',
-        description: '',
-        fish: '',
-        locationName: '',
-        lat: undefined,
-        lng: undefined,
-        image: '',
+        // title : '',
+        // description: '',
+        // fish: '',
+        // locationName: '',
+        // lat: undefined,
+        // lng: undefined,
+        // image: '',
         post: {},
-        user: {},
+        // user: {},
         redirectToPosts: false,
         loading: true
     }
@@ -53,9 +53,9 @@ class PostDetail extends React.Component {
                     <img src={this.state.post.image} alt="fish" className="post-detail-img img-fluid"/>
                         <section className="post-detail-info">
 
-                            <div>
-                                <img src={this.props.user.picture} alt="user"/>
-                                <p>{this.props.user.username}</p>
+                            <div className="user-info">
+                                <img className="post-detail-user-img img-fluid" src={this.props.user.picture} alt={this.props.user.username}/>
+                                <p className="post-detail-username">{this.props.user.username}</p>
                             </div>
                             <h2>{this.state.post.title}</h2>
                             <h5><em>Fish Caught:</em> {this.state.post.fish}</h5>
