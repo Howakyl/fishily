@@ -20,11 +20,8 @@ function Routes (props) {
             <Route path='/login' render={() => <LogIn user={props.user} setUser={props.setUser}/>}/>
             <Route path='/signup' render={() => <SignUp user={props.user} setUser={props.setUser}/>}/>
             <Route exact path='/posts' component={ PostList }/>
-            {/* <Route path='/posts/new' component={ NewPost }/> */}
             <Route exact path='/posts/new' render={() => <NewPost user={props.user} setUser={props.setUser}/>}/>
             <Route exact path='/posts/:id/edit' component={ EditPost } />
-            {/* <Route exact path='/posts/:id' component={ PostDetail }/> */}
-            {/* <Route exact path='/posts/:id' render={() => <PostDetail user={props.user} setUser={props.setUser}/>} /> */}
             <Route exact path='/posts/:id' render={() => <PostDetail user={props.user} setUser={props.setUser}/>} />
         </Switch>
     )
