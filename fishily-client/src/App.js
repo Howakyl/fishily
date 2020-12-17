@@ -7,16 +7,13 @@ function App() {
 
   let [ user , setUser ] = useState({});
 
+  //checks if user is logged in
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
       const foundUser = JSON.parse(loggedInUser);
       setUser(foundUser);
-      console.log(foundUser)
     } 
-    // else {
-    //   console.log(localStorage.getItem("user"));
-    // }
   }, []);
 
   return (

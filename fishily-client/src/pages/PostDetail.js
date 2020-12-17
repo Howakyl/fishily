@@ -19,7 +19,6 @@ class PostDetail extends React.Component {
     }
 
     componentDidMount() {
-        // Special thanks to Milcah for figuring out why this wasn't working - you the real MVP!
         const postId = this.props.match.params.id;
         PostModel.getOne(postId)
             .then((data) => {
@@ -45,8 +44,6 @@ class PostDetail extends React.Component {
         }
 
         if (!this.state.loading) {
-            // console.log('location: ' ,this.state.post.location)
-            // console.log('aaaa' , this.state.location)
             return (
                 <div className="container">
                     <div className="post-detail-container">
