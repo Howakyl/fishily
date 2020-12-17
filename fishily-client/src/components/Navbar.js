@@ -8,7 +8,8 @@ const Navbar = (props) => {
         UserModel.logout(props)
         .then((res) => {
             console.log( 'THIS THING:', props);
-            props.setUser({})
+            props.setUser({});
+            localStorage.clear();
         })
     }
 
