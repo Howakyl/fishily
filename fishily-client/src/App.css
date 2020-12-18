@@ -26,6 +26,13 @@ nav a {
   font-family: 'Pacifico' ,cursive;
 }
 
+.navbar-user-img {
+  width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: #234a35 2px solid;
+}
+
 button {
   background-color: #1170C3 !important;
 }
