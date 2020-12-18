@@ -11,8 +11,10 @@ const PostCard  = (props) => {
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">
-                        <Link to={`posts/${props.post._id}`} className="card-title">{props.post.title}</Link>
-                        <h6>By: {props.post.user.username}</h6>
+                        <h4>
+                            <Link to={`posts/${props.post._id}`} className="card-title">{props.post.title}</Link>
+                        </h4>
+                        <h6><em>By: {props.post.user.username}</em></h6>
                         <p className="card-text text-truncate">{props.post.description}</p>
                         <p className="card-text"><small className="text-muted">Posted On: {props.post.date}</small></p>
                     </div>
