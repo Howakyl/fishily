@@ -5,15 +5,7 @@ import './PostDetail.css';
 
 class PostDetail extends React.Component {
     state = {
-        // title : '',
-        // description: '',
-        // fish: '',
-        // locationName: '',
-        // lat: undefined,
-        // lng: undefined,
-        // image: '',
         post: {},
-        // user: {},
         redirectToPosts: false,
         loading: true
     }
@@ -34,8 +26,25 @@ class PostDetail extends React.Component {
             .then((res) => {
                 this.setState({redirectToPosts : true})
             })
-    } 
-
+    }
+    
+    renderBtns () {
+        
+        if (this.props.user._id === this.state.post.user._id) {
+            return (
+                <>
+                    <button
+                        className="btn btn-primary"
+                        onClick={() => this.deletePost(this.state.post._id)}
+                        >Delete Post</button>
+                        
+                    <button className="btn btn-primary post-detail-edit-btn">
+                        <Link to={`/posts/${this.state.post._id}/edit`}>Edit Post</Link>
+                    </button>
+                </>
+            )
+        }
+    }
 
     render () {
         console.log('post detail props:',this.state.post)
@@ -60,14 +69,7 @@ class PostDetail extends React.Component {
                             <p className="post-detail-description">{this.state.post.description}</p>
                             <small>Caught at: {this.state.post.locationName}</small>
                             <div className="post-detail-buttons">
-                                <button
-                                    className="btn btn-primary"
-                                    onClick={() => this.deletePost(this.state.post._id)}
-                                >Delete Post</button>
-                                <button className="btn btn-primary post-detail-edit-btn">
-
-                                <Link to={`/posts/${this.state.post._id}/edit`}>Edit Post</Link>
-                                </button>
+                                {this.renderBtns()}
                             </div>
                         </section>
                     </div>

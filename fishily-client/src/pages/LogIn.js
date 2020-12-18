@@ -17,14 +17,12 @@ class LogIn extends React.Component {
 
         UserModel.login(this.state)
             .then((res) => {
-                console.log(res.data);
                 this.props.setUser(res.data);
                 localStorage.setItem("user" , JSON.stringify(res.data));
             });
     };
 
     render () {
-        console.log('PROPS: ',this.props)
         if(this.props.user.username) {
             return <Redirect to='/posts'/>
         } else {
