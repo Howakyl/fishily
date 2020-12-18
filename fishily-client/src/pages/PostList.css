@@ -10,3 +10,9 @@
 .postList-container img {
     height: 100%;
 }
+
+.post-list-user-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
