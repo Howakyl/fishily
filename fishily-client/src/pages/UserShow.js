@@ -32,11 +32,17 @@ class UserShow extends React.Component {
     render () {
         if (!this.state.loading) {
             return (
-                <div className="userShow-container">
-                    <h1>{this.state.user.username}'s page</h1>
-                    <UserDetailCard user={this.state.user}> 
-                    </UserDetailCard>
-                    <p>{this.renderPosts()}</p>
+                <div className="userShow-container container">
+                <section>
+                    <img src={this.state.user.picture} alt={this.state.user.username} className="user-detail-img"/>
+                    <h1>{this.state.user.username}</h1>
+                    {/* <UserDetailCard user={this.state.user}> 
+                    </UserDetailCard> */}
+                </section>
+
+                    <section>
+                        <p>{this.renderPosts()}</p>
+                    </section>
                 </div>
             );
         } else {
