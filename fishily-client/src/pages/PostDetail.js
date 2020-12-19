@@ -62,7 +62,6 @@ class PostDetail extends React.Component {
                             <div className="user-info">
                                 <img className="post-detail-user-img img-fluid" src={this.state.post.user.picture} alt={this.props.user.username}/>
                                 <Link to={`/users/${this.state.post.user._id}`}>
-
                                     <p className="post-detail-username">{this.state.post.user.username}</p>
                                 </Link>
                             </div>

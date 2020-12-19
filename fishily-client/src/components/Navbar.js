@@ -1,4 +1,4 @@
-import { Link , NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import UserModel from '../models/user';
 
 const Navbar = (props) => {
@@ -72,9 +72,9 @@ const Navbar = (props) => {
                 {/* <form className="form-inline my-2 my-md-0">
                 <input className="form-control" type="text" placeholder="Search"/>
                 </form> */}
-                <NavLink to={`/users/${props.user._id}`}>
-                    <img src={props.user.picture} alt="" className="navbar-user-img"/>
-                </NavLink>
+                <Link to={`/users/${props.user._id}/`}>
+                    <img src={props.user.picture} alt="profile" className="navbar-user-img"/>
+                </Link>
             </div>
         </nav>
     )
