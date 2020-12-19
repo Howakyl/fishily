@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link , withRouter } from 'react-router-dom';
 import UserModel from '../models/user';
-import UserDetailCard from '../components/UserDetailCard';
+// import UserDetailCard from '../components/UserDetailCard';
 import './UserShow.css';
+
 
 class UserShow extends React.Component {
 
@@ -25,18 +27,46 @@ class UserShow extends React.Component {
 
     renderPosts () {
         if (this.state.user.posts.length > 0 ) {
-            return <li>{this.state.user.username} has: {this.state.user.posts.length} posts.</li>
+
+            return (
+                this.state.user.posts.map((post, index) => {
+                    return (
+                    <div className="card mb-3" style={{maxWidth: "540px"}} key={index}>
+                        <div className="row g-0">
+                            <div className="col-md-4">
+                                <img src={post.image} alt={post.fish} className="user-detail-post-img img-fluid card-img"/>
+                            </div>
+                            <div className="col-md-8">
+                                <div className="card-body">
+                                    <h4>
+                                        <Link to={`/posts/${post._id}`} className="card-title">{post.title}</Link>
+                                    </h4>
+                                    <p className="card-text text-truncate">{post.description}</p>
+                                    <p className="card-text"><small className="text-muted">Posted On: {post.date}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    )
+                })
+            )
         }
     }
 
     render () {
         if (!this.state.loading) {
             return (
-                <div className="userShow-container">
-                    <h1>{this.state.user.username}'s page</h1>
-                    <UserDetailCard user={this.state.user}> 
-                    </UserDetailCard>
-                    <p>{this.renderPosts()}</p>
+                <div className="userShow-container container">
+                <section>
+                    <img src={this.state.user.picture} alt={this.state.user.username} className="user-detail-img"/>
+                    <h1>{this.state.user.username}</h1>
+                    {/* <UserDetailCard user={this.state.user}> 
+                    </UserDetailCard> */}
+                </section>
+
+                    <section>
+                        {this.renderPosts()}
+                    </section>
                 </div>
             );
         } else {
@@ -45,4 +75,4 @@ class UserShow extends React.Component {
     };
 };
 
-export default UserShow;
+export default withRouter(UserShow);

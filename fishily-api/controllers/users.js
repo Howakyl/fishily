@@ -17,6 +17,7 @@ const index = (req, res) => {
 const show = (req, res) => {
 
     db.User.findById(req.params.id)
+    .populate("posts")
     .then((foundUser) => {
         res.json({ user: foundUser });
     })

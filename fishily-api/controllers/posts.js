@@ -33,12 +33,10 @@ const create = (req,res) => {
     const userId = req.params.id;
     db.User.findById(userId)
         .then((foundUser) => {
-            // console.log('FOUND USER:' , foundUser);
             req.body.user = userId;
             console.log('REQ BODY: ' ,req.body);
             db.Post.create(req.body)
                 .then((createdPost) => {
-                    // console.log('CREATED POST:', createdPost)
                     foundUser.posts.push(createdPost._id);
                     foundUser.save((err, savedUser) => {
                         if(err) return console.log(err);
