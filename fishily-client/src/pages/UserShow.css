@@ -36,9 +36,10 @@
     text-decoration: none;
 }
 
+/* 
 @media only screen and (min-width: 1000px) {
     .userShow-username {
-        /* display: inline-block; */
-        /* margin-left: 3rem; */
+        display: inline-block;
+        margin-left: 3rem;
     }
-}
+} */
