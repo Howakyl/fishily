@@ -58,7 +58,7 @@ class UserShow extends React.Component {
             return (
                 <>
                     <button className="btn btn-primary">
-                            Edit Profile
+                        <Link to={`/users/${this.state.user._id}/edit`}>Edit Profile</Link>
                     </button>
                     <button className="btn btn-primary">
                         <Link to="/posts/new">New Post</Link>
