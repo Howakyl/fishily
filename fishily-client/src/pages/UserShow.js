@@ -54,7 +54,7 @@ class UserShow extends React.Component {
 
     renderBtns() {
 
-        if (this.state.user._id) {
+        if (this.props.user._id === this.state.user._id) {
             return (
                 <>
                     <button className="btn btn-primary">
