@@ -1,11 +1,13 @@
 .userShow-container {
-    /* text-align: center; */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    /* align-items: center;  */
     margin-top: 2rem; 
     flex-wrap: wrap;
+}
+
+.userShow-info {
+    margin-bottom: 3rem;
 }
 
 .user-detail-img {
@@ -15,4 +17,16 @@
 
 .user-detail-post-img {
     height: 100%;
+}
+
+.userShow-username {
+    margin-top: 2rem;
+    /* margin-bottom: 2rem; */
+}
+
+@media only screen and (min-width: 1000px) {
+    .userShow-username {
+        /* display: inline-block; */
+        /* margin-left: 3rem; */
+    }
 }
