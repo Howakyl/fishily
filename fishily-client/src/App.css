@@ -14,7 +14,7 @@ nav {
 }
 
 nav a {
-  color: #1170C3 !important;
+  color: #234a35 !important;
 }
 
 .nav-title a {
@@ -33,8 +33,22 @@ nav a {
     border: #234a35 2px solid;
 }
 
-button {
+/* button {
   background-color: #1170C3 !important;
+} */
+
+.btn {
+  background-color: #234a35;
+  border: #1e402e solid 1px;
+}
+
+.btn:hover {
+  background-color: #306649;
+  border: #1e402e solid 1px;
+}
+
+.btn:active:focus {
+  background-color: #234a35 !important;
 }
 
 .home-container {
