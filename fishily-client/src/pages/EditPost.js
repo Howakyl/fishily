@@ -7,11 +7,6 @@ class EditPost extends React.Component {
         title : '',
         description: '',
         fish: '',
-        // location: {
-        //     name: '',
-        //     lat: null,
-        //     lng: null,
-        // },
         locationName: '',
         lat: undefined,
         lng: undefined,
@@ -31,11 +26,6 @@ class EditPost extends React.Component {
                     title : res.title,
                     description: res.description,
                     fish: res.fish,
-                    // location : {
-                    //     name: res.location.name,
-                    //     lat: res.location.lat,
-                    //     lng: res.location.lng
-                    // },
                     locationName: res.locationName,
                     lat: res.lat,
                     lng: res.lng,

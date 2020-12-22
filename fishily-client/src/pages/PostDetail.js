@@ -33,14 +33,12 @@ class PostDetail extends React.Component {
         if (this.props.user._id === this.state.post.user._id) {
             return (
                 <>
-                    <button
+                    <span
                         className="btn btn-primary"
                         onClick={() => this.deletePost(this.state.post._id)}
-                        >Delete Post</button>
+                        >Delete Post</span>
                         
-                    <button className="btn btn-primary post-detail-edit-btn">
-                        <Link to={`/posts/${this.state.post._id}/edit`}>Edit Post</Link>
-                    </button>
+                        <Link to={`/posts/${this.state.post._id}/edit`} className="btn btn-primary post-detail-edit-btn">Edit Post</Link>
                 </>
             )
         }

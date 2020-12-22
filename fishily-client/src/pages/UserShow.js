@@ -57,12 +57,8 @@ class UserShow extends React.Component {
         if (this.props.user._id === this.state.user._id) {
             return (
                 <>
-                    <button className="btn btn-primary">
-                            Edit Profile
-                    </button>
-                    <button className="btn btn-primary">
-                        <Link to="/posts/new">New Post</Link>
-                    </button>
+                        <Link to={`/users/${this.state.user._id}/edit`} className="btn btn-primary">Edit Profile</Link>
+                        <Link to="/posts/new" className="btn btn-primary">New Post</Link>
                 </>
             )
         }
