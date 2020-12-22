@@ -13,6 +13,7 @@
 .user-detail-img {
     max-width: 400px;
     border-radius: 10px;
+    border: #234a35 2px solid;
 }
 
 .user-detail-post-img {
@@ -22,6 +23,17 @@
 .userShow-username {
     margin-top: 2rem;
     /* margin-bottom: 2rem; */
+}
+
+.userShow-btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.userShow-btns a {
+    color: white !important;
+    text-decoration: none;
 }
 
 @media only screen and (min-width: 1000px) {

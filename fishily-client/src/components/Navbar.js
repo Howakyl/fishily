@@ -60,7 +60,7 @@ const Navbar = (props) => {
             <div className="collapse navbar-collapse" id="navbarsExample04">
                 <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/users">All users</Link>
+                    <Link className="nav-link" to="/users">All Users</Link>
                 </li>
                 <li className="nav-item active">
                     <Link className="nav-link" to="/posts">All Posts</Link>

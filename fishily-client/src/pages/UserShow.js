@@ -61,8 +61,14 @@ class UserShow extends React.Component {
                     <img src={this.state.user.picture} alt={this.state.user.username} className="user-detail-img"/>
                     <h1 className="userShow-username">{this.state.user.username}</h1>
                     <h5>{this.state.user.firstName} {this.state.user.lastName}</h5>
-                    {/* <UserDetailCard user={this.state.user}> 
-                    </UserDetailCard> */}
+                    <div className="userShow-btns">
+                        <button className="btn btn-primary">
+                            Edit Profile
+                        </button>
+                        <button className="btn btn-primary">
+                            <Link to="/posts/new">New Post</Link>
+                        </button>
+                    </div>
                 </section>
 
                     <section>
