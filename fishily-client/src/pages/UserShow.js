@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link , withRouter } from 'react-router-dom';
 import UserModel from '../models/user';
-// import UserDetailCard from '../components/UserDetailCard';
 import './UserShow.css';
 
 
@@ -53,15 +52,34 @@ class UserShow extends React.Component {
         }
     }
 
+    renderBtns() {
+
+        if (this.props.user._id === this.state.user._id) {
+            return (
+                <>
+                    <button className="btn btn-primary">
+                            Edit Profile
+                    </button>
+                    <button className="btn btn-primary">
+                        <Link to="/posts/new">New Post</Link>
+                    </button>
+                </>
+            )
+        }
+    }
+
     render () {
         if (!this.state.loading) {
             return (
-                <div className="userShow-container container">
-                <section>
+                <div className="userShow-container">
+                <section className="userShow-info">
                     <img src={this.state.user.picture} alt={this.state.user.username} className="user-detail-img"/>
-                    <h1>{this.state.user.username}</h1>
-                    {/* <UserDetailCard user={this.state.user}> 
-                    </UserDetailCard> */}
+                    <h1 className="userShow-username">{this.state.user.username}</h1>
+                    <h5>{this.state.user.firstName} {this.state.user.lastName}</h5>
+                    <hr/>
+                    <div className="userShow-btns">
+                        {this.renderBtns()}
+                    </div>
                 </section>
 
                     <section>
