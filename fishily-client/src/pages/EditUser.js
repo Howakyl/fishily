@@ -45,7 +45,7 @@ const EditUser = (props) => {
 
     if (!isLoading) {
         return (
-            <div>
+            <div className="container">
                 <form onSubmit={handleFormSubmit}>
                     <h1>Edit your profile!</h1>
                     <div className="form-group">
@@ -59,6 +59,52 @@ const EditUser = (props) => {
                             name="username"
                         />
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="firstNameInput">First name:</label>
+                        <input
+                            onChange={e => setFirstName(e.target.value)}
+                            type="text" 
+                            className="form-control" 
+                            id="firstNameInput"
+                            value={firstName}
+                            name="firstName"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="lastNameInput">Last name:</label>
+                        <input
+                            onChange={e => setLastName(e.target.value)}
+                            type="text" 
+                            className="form-control" 
+                            id="lastNameInput"
+                            value={lastName}
+                            name="lastName"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="bioInput">Bio:</label>
+                        <input
+                            onChange={e => setBio(e.target.value)}
+                            type="text" 
+                            className="form-control" 
+                            id="bioInput"
+                            value={bio}
+                            name="bio"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="pictureInput">picture:</label>
+                        <input
+                            onChange={e => setPicture(e.target.value)}
+                            type="text" 
+                            className="form-control" 
+                            id="pictureInput"
+                            value={picture}
+                            name="picture"
+                        />
+                    </div>
+
+                    <button type="submit" className="btn btn-primary">Save Changes</button>
                 </form>
             </div>
         )
