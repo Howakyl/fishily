@@ -30,6 +30,17 @@ const EditUser = (props) => {
         setFormInput({ [event.target.name] : event.target.value });
     }
 
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+
+        const userId = props.match.params.id;
+        UserModel.update(userId, formInput)
+            .then((res) => {
+                console.log('updated user: ', res);
+                this.props.history.push(`/users/${userId}`);
+            });
+    };
+
     return (
         <>
         </>
