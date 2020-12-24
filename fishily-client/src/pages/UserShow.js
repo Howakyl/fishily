@@ -94,7 +94,9 @@ class UserShow extends React.Component {
                     <h1 className="userShow-username">{this.state.user.username}</h1>
                     <h5 className="userShow-name">{this.state.user.firstName} {this.state.user.lastName}</h5>
                     <br/>
-                    {this.renderBio()}
+                    <div>
+                        {this.renderBio()}
+                    </div>
                     <hr/>
                     <div className="userShow-btns">
                         {this.renderBtns()}
