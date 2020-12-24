@@ -8,7 +8,7 @@ class UserShow extends React.Component {
 
     state = {
         user: {},
-        loading: true
+        loading: true,
     };
 
     componentDidMount() {
@@ -18,11 +18,21 @@ class UserShow extends React.Component {
             
             this.setState({
                 user: res.data.user,
-                loading: false
+                loading: false,
             });
         });
     };
-
+    
+    componentDidUpdate () {
+        const userId = this.props.match.params.id
+        
+        UserModel.getOne(userId).then((res) => {
+            
+            this.setState({
+                user: res.data.user,
+            });
+        });
+    }
 
     renderPosts () {
         if (this.state.user.posts.length > 0 ) {
@@ -57,8 +67,8 @@ class UserShow extends React.Component {
         if (this.props.user._id === this.state.user._id) {
             return (
                 <>
-                        <Link to={`/users/${this.state.user._id}/edit`} className="btn btn-primary">Edit Profile</Link>
-                        <Link to="/posts/new" className="btn btn-primary">New Post</Link>
+                    <Link to={`/users/${this.state.user._id}/edit`} className="btn btn-primary">Edit Profile</Link>
+                    <Link to="/posts/new" className="btn btn-primary">New Post</Link>
                 </>
             )
         }
