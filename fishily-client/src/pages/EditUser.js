@@ -17,6 +17,10 @@ const EditUser = (props) => {
                 const res = data.data.user;
                 console.log(res);
                 setUsername(res.username);
+                setFirstName(res.firstName);
+                setLastName(res.lastName);
+                setBio(res.bio);
+                setPicture(res.picture);
                 setLoading(false);
             })
     }, []);
