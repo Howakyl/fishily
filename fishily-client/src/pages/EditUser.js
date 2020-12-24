@@ -9,6 +9,7 @@ const EditUser = (props) => {
     // const [ password, setPassword ] = useState('');
     const [ bio, setBio ] = useState('');
     const [ picture, setPicture ] = useState('');
+    const [ formInput, setFormInput ] = useState({});
 
     useEffect (() => {
         const userId = props.match.params.id;
@@ -24,6 +25,10 @@ const EditUser = (props) => {
                 setLoading(false);
             })
     }, []);
+
+    const handleInputChange = (event) => {
+        setFormInput({ [event.target.name] : event.target.value });
+    }
 
     return (
         <>
