@@ -26,10 +26,9 @@ class UserList extends React.Component {
         // console.log(this.state)
         return this.state.users.map((user) => {
             return (
-                <li className="userList-card">
+                <li className="userList-card" key={user._id}>
                     <UserCard
                         user={user}
-                        key={user._id}
                     />
                 </li>
             )

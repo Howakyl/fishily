@@ -8,7 +8,7 @@ class UserShow extends React.Component {
 
     state = {
         user: {},
-        loading: true
+        loading: true,
     };
 
     componentDidMount() {
@@ -18,11 +18,21 @@ class UserShow extends React.Component {
             
             this.setState({
                 user: res.data.user,
-                loading: false
+                loading: false,
             });
         });
     };
-
+    
+    componentDidUpdate () {
+        const userId = this.props.match.params.id
+        
+        UserModel.getOne(userId).then((res) => {
+            
+            this.setState({
+                user: res.data.user,
+            });
+        });
+    }
 
     renderPosts () {
         if (this.state.user.posts.length > 0 ) {
@@ -30,7 +40,7 @@ class UserShow extends React.Component {
             return (
                 this.state.user.posts.map((post, index) => {
                     return (
-                    <div className="card mb-3" style={{maxWidth: "540px"}} key={index}>
+                    <div className="card mb-3 userShow-post-card" style={{maxWidth: "540px"}} key={index}>
                         <div className="row g-0">
                             <div className="col-md-4">
                                 <img src={post.image} alt={post.fish} className="user-detail-post-img img-fluid card-img"/>
@@ -49,16 +59,31 @@ class UserShow extends React.Component {
                     )
                 })
             )
+        } else {
+            return (
+                <h3>This user has no posts.</h3>
+            )
+        }
+    }
+
+    renderBio () {
+        if (this.state.user.bio.length > 0) {
+            return (
+                <p>{this.state.user.bio}</p>
+            )
+        } else {
+            return (
+                <p>This user has no bio.</p>
+            )
         }
     }
 
     renderBtns() {
-
         if (this.props.user._id === this.state.user._id) {
             return (
                 <>
-                        <Link to={`/users/${this.state.user._id}/edit`} className="btn btn-primary">Edit Profile</Link>
-                        <Link to="/posts/new" className="btn btn-primary">New Post</Link>
+                    <Link to={`/users/${this.state.user._id}/edit`} className="btn btn-primary">Edit Profile</Link>
+                    <Link to="/posts/new" className="btn btn-primary">New Post</Link>
                 </>
             )
         }
@@ -71,7 +96,11 @@ class UserShow extends React.Component {
                 <section className="userShow-info">
                     <img src={this.state.user.picture} alt={this.state.user.username} className="user-detail-img"/>
                     <h1 className="userShow-username">{this.state.user.username}</h1>
-                    <h5>{this.state.user.firstName} {this.state.user.lastName}</h5>
+                    <h5 className="userShow-name">{this.state.user.firstName} {this.state.user.lastName}</h5>
+                    <br/>
+                    <div>
+                        {this.renderBio()}
+                    </div>
                     <hr/>
                     <div className="userShow-btns">
                         {this.renderBtns()}

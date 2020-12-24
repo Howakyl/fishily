@@ -14,15 +14,23 @@
     max-width: 400px;
     border-radius: 10px;
     border: #234a35 2px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .user-detail-post-img {
     height: 100%;
 }
 
+.userShow-post-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .userShow-username {
     margin-top: 2rem;
-    /* margin-bottom: 2rem; */
+}
+
+.userShow-name {
+    color: #555;
 }
 
 .userShow-btns {
