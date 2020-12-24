@@ -17,6 +17,10 @@ nav a {
   color: #234a35 !important;
 }
 
+nav a:hover {
+  text-shadow: 1px 1px 4px #000000;
+}
+
 .nav-title a {
   color: #234a35 !important;
   font-size: 2rem;

@@ -40,7 +40,7 @@ class UserShow extends React.Component {
             return (
                 this.state.user.posts.map((post, index) => {
                     return (
-                    <div className="card mb-3" style={{maxWidth: "540px"}} key={index}>
+                    <div className="card mb-3 userShow-post-card" style={{maxWidth: "540px"}} key={index}>
                         <div className="row g-0">
                             <div className="col-md-4">
                                 <img src={post.image} alt={post.fish} className="user-detail-post-img img-fluid card-img"/>
