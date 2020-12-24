@@ -59,11 +59,20 @@ class UserShow extends React.Component {
                     )
                 })
             )
+        } else {
+            return (
+                <h3>This user has no posts.</h3>
+            )
         }
     }
 
-    renderBtns() {
+    // renderBio () {
+    //     if (this.state.user.bio.length > 0) {
 
+    //     }
+    // }
+
+    renderBtns() {
         if (this.props.user._id === this.state.user._id) {
             return (
                 <>
