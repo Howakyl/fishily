@@ -22,7 +22,10 @@
 
 .userShow-username {
     margin-top: 2rem;
-    /* margin-bottom: 2rem; */
+}
+
+.userShow-name {
+    color: #555;
 }
 
 .userShow-btns {

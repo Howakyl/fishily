@@ -66,11 +66,13 @@ class UserShow extends React.Component {
         }
     }
 
-    // renderBio () {
-    //     if (this.state.user.bio.length > 0) {
-
-    //     }
-    // }
+    renderBio () {
+        if (this.state.user.bio.length > 0) {
+            return (
+                <p>{this.state.user.bio}</p>
+            )
+        }
+    }
 
     renderBtns() {
         if (this.props.user._id === this.state.user._id) {
@@ -90,7 +92,9 @@ class UserShow extends React.Component {
                 <section className="userShow-info">
                     <img src={this.state.user.picture} alt={this.state.user.username} className="user-detail-img"/>
                     <h1 className="userShow-username">{this.state.user.username}</h1>
-                    <h5>{this.state.user.firstName} {this.state.user.lastName}</h5>
+                    <h5 className="userShow-name">{this.state.user.firstName} {this.state.user.lastName}</h5>
+                    <br/>
+                    {this.renderBio()}
                     <hr/>
                     <div className="userShow-btns">
                         {this.renderBtns()}
