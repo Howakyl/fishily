@@ -24,7 +24,7 @@ const EditUser = (props) => {
                 setPicture(res.picture);
                 setLoading(false);
             })
-    }, []);
+    } , [props.match.params.id]);
 
     const handleInputChange = (event) => {
         setFormInput({ [event.target.name] : event.target.value });

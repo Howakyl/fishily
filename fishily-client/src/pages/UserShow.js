@@ -23,15 +23,18 @@ class UserShow extends React.Component {
         });
     };
     
-    componentDidUpdate () {
+    componentDidUpdate (prevProps) {
         const userId = this.props.match.params.id
-        
-        UserModel.getOne(userId).then((res) => {
-            
-            this.setState({
-                user: res.data.user,
+        console.log('updated component')
+
+        if (userId !== prevProps.match.params.id) {
+            UserModel.getOne(userId).then((res) => {
+                
+                this.setState({
+                    user: res.data.user,
+                });
             });
-        });
+        }
     }
 
     renderPosts () {
