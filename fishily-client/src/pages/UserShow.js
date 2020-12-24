@@ -71,6 +71,10 @@ class UserShow extends React.Component {
             return (
                 <p>{this.state.user.bio}</p>
             )
+        } else {
+            return (
+                <p>This user has no bio.</p>
+            )
         }
     }
 
