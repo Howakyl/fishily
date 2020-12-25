@@ -74,6 +74,7 @@ const update = (req,res) => {
         { new: true })
             .then((updatedUser) => {
                 res.json({ user: updatedUser });
+                console.log('Updated user: ' , updatedUser);
             })
             .catch((err) => {
                 console.log('error updating user: ', err);
