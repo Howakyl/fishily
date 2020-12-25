@@ -82,14 +82,14 @@ class UserShow extends React.Component {
     }
 
     renderBtns() {
-        // if (this.props.user._id === this.state.user._id) {
+        if (this.props.user._id === this.state.user._id) {
             return (
                 <>
                     <Link to={`/users/${this.state.user._id}/edit`} className="btn btn-primary">Edit Profile</Link>
                     <Link to="/posts/new" className="btn btn-primary">New Post</Link>
                 </>
             )
-        // }
+        }
     }
 
     render () {
