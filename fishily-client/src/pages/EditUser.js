@@ -9,7 +9,6 @@ const EditUser = (props) => {
     // const [ password, setPassword ] = useState('');
     const [ bio, setBio ] = useState('');
     const [ picture, setPicture ] = useState('');
-    const [ formInput, setFormInput ] = useState({});
 
     useEffect (() => {
         const userId = props.match.params.id;
@@ -26,20 +25,23 @@ const EditUser = (props) => {
             })
     } , [props.match.params.id]);
 
-    const handleInputChange = (event) => {
-        console.log('input changed : ' , event.target.name)
-        setFormInput({ [event.target.name] : event.target.value });
-        
-    }
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-
         const userId = props.match.params.id;
-        UserModel.update(userId, (username, firstName, lastName, bio, picture))
+        
+        const formData = {
+            username: username,
+            firstName: firstName,
+            lastName: lastName,
+            bio: bio,
+            picture: picture
+        }
+
+        UserModel.update(userId, formData)
             .then((res) => {
                 console.log('updated user: ', res);
-                this.props.history.push(`/users/${userId}`);
+                props.history.push(`/users/${userId}`);
             });
     };
 

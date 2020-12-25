@@ -22,6 +22,12 @@ class UserModel {
         return request;
     }
 
+    //UPDATE user
+    static update (userId, updatedUser) {
+        let request = axios.put(`${endPoint}/${userId}` , updatedUser);
+        return request;
+    }
+
     //LOGIN user
     static login = (user) => {
         let request = axios.post(logInEndPoint , user);
