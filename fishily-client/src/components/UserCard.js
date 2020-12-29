@@ -17,7 +17,7 @@ const UserCard = (props) => {
             <img src={props.user.picture} className="card-img-top" alt='user'/>
             <div className="card-body">
                 <h5 className="card-title">{props.user.username}</h5>
-                <div className="card-text">{bioText()}</div>
+                <div className="card-text text-truncate">{bioText()}</div>
                 <Link to={`users/${props.user._id}`} className="btn btn-primary">View Profile</Link>
             </div>
         </div>

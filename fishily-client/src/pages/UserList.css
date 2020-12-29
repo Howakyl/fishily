@@ -18,6 +18,10 @@
     border: none;
 }
 
+.card-img-top {
+    height: 180px;
+}
+
 .userList-title {
     text-align: center;
     margin-top: 2rem;

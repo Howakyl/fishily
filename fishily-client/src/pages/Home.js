@@ -4,9 +4,11 @@ const Home = (props) => {
 
     function welcomeMsg () {
         if (props.user.username) {
-            <>
-                <p>Logged in as: {props.user.username}</p>
-            </>
+            return (
+                <>
+                    <p>Logged in as: {props.user.username}</p>
+                </>
+            )
         }
     }
 
