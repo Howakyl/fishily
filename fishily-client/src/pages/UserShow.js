@@ -101,7 +101,7 @@ class UserShow extends React.Component {
                     <h1 className="userShow-username">{this.state.user.username}</h1>
                     <h5 className="userShow-name">{this.state.user.firstName} {this.state.user.lastName}</h5>
                     <br/>
-                    <div>
+                    <div className="userShow-bio text-wrap text-break">
                         {this.renderBio()}
                     </div>
                     <hr/>
@@ -110,7 +110,7 @@ class UserShow extends React.Component {
                     </div>
                 </section>
 
-                    <section>
+                    <section className="userShow-posts-container">
                         {this.renderPosts()}
                     </section>
                 </div>

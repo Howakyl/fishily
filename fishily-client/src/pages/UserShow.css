@@ -8,6 +8,7 @@
 
 .userShow-info {
     margin-bottom: 3rem;
+    max-width: 400px;
 }
 
 .user-detail-img {
@@ -19,6 +20,12 @@
 
 .user-detail-post-img {
     height: 100%;
+}
+
+.userShow-bio {
+    /* max-width: 25%;
+    display: inline-block; */
+    overflow: hidden;
 }
 
 .userShow-post-card {
@@ -51,3 +58,10 @@
         margin-left: 3rem;
     }
 } */
+
+@media only screen and (max-width: 600px) {
+    .userShow-container{
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+}
