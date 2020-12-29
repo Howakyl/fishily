@@ -7,6 +7,14 @@
     align-items: center;
 }
 
+.post-detail-info {
+    max-width: 400px;
+    background-color: #DDDDDD;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .post-detail-img {
     max-width: 400px;
     border-radius: 10px;
@@ -28,6 +36,7 @@
     background-color: #DDDDDD;
     padding: 15px;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .user-info {
@@ -48,6 +57,12 @@
     height: 60px;
     border-radius: 50%;
     border: #234a35 2px solid;
+}
+
+@media only screen and (max-width: 1000px) {
+    .post-detail-info {
+        margin-top: 3rem;
+    }
 }
 
 @media only screen and (min-width: 950px) {
