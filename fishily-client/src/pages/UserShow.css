@@ -23,8 +23,6 @@
 }
 
 .userShow-bio {
-    /* max-width: 25%;
-    display: inline-block; */
     overflow: hidden;
 }
 
@@ -50,14 +48,6 @@
     color: white !important;
     text-decoration: none;
 }
-
-/* 
-@media only screen and (min-width: 1000px) {
-    .userShow-username {
-        display: inline-block;
-        margin-left: 3rem;
-    }
-} */
 
 @media only screen and (max-width: 600px) {
     .userShow-container{
