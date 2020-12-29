@@ -8,6 +8,7 @@
 
 .userShow-info {
     margin-bottom: 3rem;
+    max-width: 400px;
 }
 
 .user-detail-img {
@@ -19,6 +20,10 @@
 
 .user-detail-post-img {
     height: 100%;
+}
+
+.userShow-bio {
+    overflow: hidden;
 }
 
 .userShow-post-card {
@@ -44,10 +49,9 @@
     text-decoration: none;
 }
 
-/* 
-@media only screen and (min-width: 1000px) {
-    .userShow-username {
-        display: inline-block;
-        margin-left: 3rem;
+@media only screen and (max-width: 600px) {
+    .userShow-container{
+        margin-left: 80px;
+        margin-right: 80px;
     }
-} */
+}

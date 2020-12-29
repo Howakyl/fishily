@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const PostCard  = (props) => {
     return (
         
-        <div className="card mb-3" style={{maxWidth: "540px"}}>
+        <div className="card mb-3 postList-card" style={{maxWidth: "540px"}}>
             <div className="row no-gutters">
                 <div className="col-md-4">
                     <img src={props.post.image} className="card-img" alt="fish"/>

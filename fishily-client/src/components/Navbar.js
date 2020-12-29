@@ -48,6 +48,16 @@ const Navbar = (props) => {
         }
     }
 
+    function renderProfileImg () {
+        if (props.user.username) {
+            return (
+                <Link to={`/users/${props.user._id}`}>
+                    <img src={props.user.picture} alt="profile" className="navbar-user-img"/>
+                </Link>
+            )
+        }
+    }
+
     return (
         <nav className="navbar navbar-expand-md navbar-light">
             <div className="nav-title">
@@ -72,9 +82,7 @@ const Navbar = (props) => {
                 {/* <form className="form-inline my-2 my-md-0">
                 <input className="form-control" type="text" placeholder="Search"/>
                 </form> */}
-                <Link to={`/users/${props.user._id}`}>
-                    <img src={props.user.picture} alt="profile" className="navbar-user-img"/>
-                </Link>
+                {renderProfileImg()}
             </div>
         </nav>
     )

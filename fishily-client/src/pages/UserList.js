@@ -38,7 +38,7 @@ class UserList extends React.Component {
     render () {
         if(!this.state.loading) {
             return (
-                <div>
+                <div className="container">
                     <h2 className="userList-title">Fishily users:</h2>
                     <ul className="userList-container">
                     
