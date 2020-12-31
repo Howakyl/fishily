@@ -32,7 +32,6 @@ class LogIn extends React.Component {
                         <h1>Log In!</h1>
                         <div className="form-group">
                             <label htmlFor="usernameInput">username</label>
-                            <small className="form-text text-muted">required</small>
                             <input
                                 onChange={this.handleInputchange}
                                 type="text" 

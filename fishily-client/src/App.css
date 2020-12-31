@@ -35,6 +35,11 @@ nav a:hover {
     border: #234a35 2px solid;
 }
 
+h4 a {
+  color: #234a35;
+  font-weight: bold;
+}
+
 .navbar-toggler:focus {
   background-color: #B4C9AE;
   outline: none;

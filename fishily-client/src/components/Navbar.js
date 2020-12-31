@@ -13,6 +13,12 @@ const Navbar = (props) => {
         })
     }
 
+    function confirmLogOut () {
+        const confirmLogOut = window.confirm('are you sure you want to log out?');
+        if (confirmLogOut === true) return logOutClick();
+    }
+    
+
     function loginNav() {
         if(!props.user.username) {
             return (
@@ -29,7 +35,7 @@ const Navbar = (props) => {
             return (
                 <>
                 <li className="nav-item ">
-                    <Link className="nav-link" to="/" onClick={logOutClick}>Log Out</Link>
+                    <Link className="nav-link" to="/" onClick={confirmLogOut}>Log Out</Link>
                 </li>
                 </>
             )
