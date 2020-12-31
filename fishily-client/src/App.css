@@ -35,6 +35,10 @@ nav a:hover {
     border: #234a35 2px solid;
 }
 
+.navbar-toggler:focus {
+  background-color: #B4C9AE;
+  outline: none;
+}
 .btn {
   background-color: #234a35;
   border: #1e402e solid 1px;

@@ -63,12 +63,12 @@ const Navbar = (props) => {
             <div className="nav-title">
                 <Link className="navbar-brand navbar-title" to="/">Fishily</Link>
             </div>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#fishilyNav" aria-controls="fishilyNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse" id="navbarsExample04">
-                <ul className="navbar-nav mr-auto">
+            <div className="collapse navbar-collapse" id="fishilyNav">
+                <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
                     <Link className="nav-link" to="/users">All Users</Link>
                 </li>
