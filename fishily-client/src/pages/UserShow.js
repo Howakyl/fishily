@@ -111,6 +111,8 @@ class UserShow extends React.Component {
                 </section>
 
                     <section className="userShow-posts-container">
+                        <h3 className="userShow-posts-title">{this.state.user.username}'s Catches</h3>
+                        <hr/>
                         {this.renderPosts()}
                     </section>
                 </div>
