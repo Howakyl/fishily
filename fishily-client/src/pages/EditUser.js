@@ -86,7 +86,7 @@ const EditUser = (props) => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="bioInput">Bio:</label>
-                        <input
+                        <textarea
                             onChange={e => setBio(e.target.value)}
                             type="text" 
                             className="form-control" 
