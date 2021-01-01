@@ -50,7 +50,7 @@ const EditUser = (props) => {
         return (
             <div className="container">
                 <form onSubmit={handleFormSubmit}>
-                    <h1>Edit your profile!</h1>
+                    <h1 className="mt-5">Edit your profile!</h1>
                     <div className="form-group">
                         <label htmlFor="usernameInput">Username:</label>
                         <input
@@ -95,7 +95,7 @@ const EditUser = (props) => {
                             name="bio"
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mb-4">
                         <label htmlFor="pictureInput">picture:</label>
                         <input
                             onChange={e => setPicture(e.target.value)}
@@ -107,7 +107,7 @@ const EditUser = (props) => {
                         />
                     </div>
 
-                    <button type="submit" className="btn btn-primary">Save Changes</button>
+                    <button type="submit" className="btn btn-primary mb-3">Save Changes</button>
                 </form>
             </div>
         )
