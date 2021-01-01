@@ -29,7 +29,7 @@ class LogIn extends React.Component {
             return (
                 <div>
                     <form className="container" onSubmit={this.handleFormSubmit}>
-                        <h1>Log In!</h1>
+                        <h1 className="logInTitle">Log In!</h1>
                         <div className="form-group">
                             <label htmlFor="usernameInput">username</label>
                             <input
@@ -41,6 +41,7 @@ class LogIn extends React.Component {
                                 name="username"
                             />
                         </div>
+                        <br/>
                         <div className="form-group">
                             <label htmlFor="passInput">Password</label>
                             <input

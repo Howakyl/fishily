@@ -9,6 +9,8 @@ body {
 
 nav {
   background-color: #EEEEEE !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 nav a {
@@ -35,6 +37,15 @@ nav a:hover {
     border: #234a35 2px solid;
 }
 
+.logInTitle {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.form-control {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 h4 a {
   color: #234a35;
   font-weight: bold;
