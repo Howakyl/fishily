@@ -9,8 +9,8 @@ body {
 
 nav {
   background-color: #EEEEEE !important;
-  /* display: flex !important;
-  justify-content: space-evenly !important; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 nav a {
@@ -37,10 +37,24 @@ nav a:hover {
     border: #234a35 2px solid;
 }
 
-/* button {
-  background-color: #1170C3 !important;
-} */
+.logInTitle {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
 
+.form-control {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+h4 a {
+  color: #234a35;
+  font-weight: bold;
+}
+
+.navbar-toggler:focus {
+  background-color: #B4C9AE;
+  outline: none;
+}
 .btn {
   background-color: #234a35;
   border: #1e402e solid 1px;
@@ -73,3 +87,16 @@ nav a:hover {
 .home-container p {
   padding-left: 1rem;
 }
+
+@media only screen and (max-width: 770px) {
+  .newPost-location {
+    flex-basis: auto;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .home-container {
+    background-position: center;
+  }
+}
+

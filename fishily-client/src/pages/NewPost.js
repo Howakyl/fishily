@@ -76,7 +76,7 @@ class NewPost extends React.Component {
                     </div>
 
                     <section className="row">
-                        <div className="form-group col">
+                        <div className="form-group col newPost-location">
                             <label htmlFor="locationInput">Where Was Your Catch?</label>
                             <input
                                 onChange={this.handleInputChange}

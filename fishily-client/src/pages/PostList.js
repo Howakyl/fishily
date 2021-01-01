@@ -29,7 +29,7 @@ class PostList extends React.Component {
                     key={post._id}
                 />
             )
-        })
+        }).reverse();
     };
 
 

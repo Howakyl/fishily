@@ -57,7 +57,7 @@ class EditPost extends React.Component {
             return <div>Loading...</div>
         }
         return (
-            <div className="">
+            <div>
                 <form className="container editPost-form" onSubmit={this.handleFormSubmit}>
                         <h1>Edit your post!</h1>
                     <div className="form-group">
@@ -97,7 +97,7 @@ class EditPost extends React.Component {
                     </div>
 
                     <section className="row">
-                        <div className="form-group col">
+                        <div className="form-group col editPost-location">
                             <label htmlFor="locationInput">Where Was Your Catch?</label>
                             <input
                                 onChange={this.handleInputChange}

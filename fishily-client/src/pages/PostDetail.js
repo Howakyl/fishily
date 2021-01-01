@@ -20,12 +20,17 @@ class PostDetail extends React.Component {
                 })
             })
     };
-
+    
     deletePost = (id) => {
         PostModel.delete(id)
             .then((res) => {
                 this.setState({redirectToPosts : true})
             })
+    }
+
+    confirmPostDelete (post) {
+        const confirmDelete = window.confirm('Are you sure you want to delete your post?');
+        if(confirmDelete === true) return this.deletePost(post);
     }
     
     renderBtns () {
@@ -35,7 +40,7 @@ class PostDetail extends React.Component {
                 <>
                     <span
                         className="btn btn-primary"
-                        onClick={() => this.deletePost(this.state.post._id)}
+                        onClick={() => this.confirmPostDelete(this.state.post._id)}
                         >Delete Post</span>
                         
                         <Link to={`/posts/${this.state.post._id}/edit`} className="btn btn-primary post-detail-edit-btn">Edit Post</Link>
