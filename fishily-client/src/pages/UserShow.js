@@ -60,7 +60,7 @@ class UserShow extends React.Component {
                         </div>
                     </div>
                     )
-                })
+                }).reverse()
             )
         } else {
             return (
