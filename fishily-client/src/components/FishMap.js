@@ -35,9 +35,15 @@ const FishMap = (props) => {
             ))}
 
             {selectedPost ? (
-                <Popup latitude={selectedPost.lat} longitude={selectedPost.lng}>
+                <Popup 
+                    latitude={selectedPost.lat} 
+                    longitude={selectedPost.lng}
+                    onClose={() => {
+                        setSelectedPost(null);
+                    }}
+                    >
                     <div>
-                        post!
+                        <h5>{selectedPost.title}</h5>
                     </div>
                 </Popup>
             ) : null}

@@ -103,6 +103,10 @@ h4 a {
   outline: none;
 }
 
+.mapboxgl-popup-close-button:focus {
+  outline: none;
+}
+
 @media only screen and (max-width: 770px) {
   .newPost-location {
     flex-basis: auto;
