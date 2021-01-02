@@ -23,9 +23,9 @@ const FishMap = (props) => {
             >
             {props.posts.map((post, index) => (
                 <Marker key={index} latitude={post.lat} longitude={post.lng}>
-                    <div>
-                        FISH
-                    </div>
+                    <button className="markerBtn">
+                        <img src={`${process.env.PUBLIC_URL}/fish-marker.png`} alt=""/>
+                    </button>
                 </Marker>
             ))}
             </ReactMapGl>

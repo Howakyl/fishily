@@ -88,6 +88,16 @@ h4 a {
   padding-left: 1rem;
 }
 
+.markerBtn {
+  background: none;
+  border: none;
+}
+
+.markerBtn img {
+  width: 20px;
+  height: 20px;
+}
+
 @media only screen and (max-width: 770px) {
   .newPost-location {
     flex-basis: auto;
