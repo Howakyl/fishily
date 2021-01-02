@@ -15,8 +15,12 @@ const FishMap = (props) => {
             <ReactMapGl 
             {...viewport} 
             mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+            mapStyle="mapbox://styles/howakyl/ckjf4skamegso19lhg8mm027h"
+            onViewportChange={(viewport) => {
+                setViewport(viewport);
+            }}
             >
-                markers
+            
             </ReactMapGl>
         </div>
     )
