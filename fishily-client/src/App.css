@@ -88,6 +88,29 @@ h4 a {
   padding-left: 1rem;
 }
 
+.markerBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.markerBtn img {
+  width: 20px;
+  height: 20px;
+}
+
+.markerBtn:focus {
+  outline: none;
+}
+
+.markerPopup {
+  padding: 10px 5px 0px 5px;
+}
+
+.mapboxgl-popup-close-button:focus {
+  outline: none;
+}
+
 @media only screen and (max-width: 770px) {
   .newPost-location {
     flex-basis: auto;
