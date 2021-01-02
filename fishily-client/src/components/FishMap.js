@@ -1,5 +1,6 @@
 import React , { useState, useEffect } from 'react';
 import ReactMapGl, { Marker, Popup } from 'react-map-gl';
+import { Link } from 'react-router-dom';
 
 
 const FishMap = (props) => {
@@ -21,6 +22,7 @@ const FishMap = (props) => {
         };
         window.addEventListener("keydown" , listener);
 
+        //removes event listener on unmount
         return () => {
             window.removeEventListener("keydown" , listener);
         }
@@ -42,7 +44,7 @@ const FishMap = (props) => {
                         e.preventDefault();
                         setSelectedPost(post);
                     }}>
-                        <img src="/fish-marker.png" alt=""/>
+                        <img src="/fish-marker.png" alt="fish marker"/>
                     </button>
                 </Marker>
             ))}
@@ -55,8 +57,11 @@ const FishMap = (props) => {
                         setSelectedPost(null);
                     }}
                     >
-                    <div>
+                    <div className="markerPopup">
                         <h5>{selectedPost.title}</h5>
+                        {/* <p className="text-truncate">{selectedPost.description}</p> */}
+                        {/* <img src={selectedPost.image} alt=""/> */}
+                        {/* <Link className="btn btn-primary" to={`/posts/${selectedPost._id}`} onClick={console.log('clicked!')}>button!</Link> */}
                     </div>
                 </Popup>
             ) : null}
