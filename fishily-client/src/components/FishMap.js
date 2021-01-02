@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React , { useState, useEffect } from 'react';
 import ReactMapGl, { Marker, Popup } from 'react-map-gl';
 
 
@@ -12,6 +12,15 @@ const FishMap = (props) => {
     });
     
     const [ selectedPost, setSelectedPost ] = useState(null);
+
+    useEffect(() => {
+        const listener = (e) => {
+            if (e.key === 'Escape') {
+                setSelectedPost(null);
+            };
+        };
+        window.addEventListener("keydown" , listener);
+    },[])
 
     return (
         <div id="mapContainer">
