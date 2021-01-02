@@ -36,9 +36,14 @@ class PostList extends React.Component {
 
     render () {
         return (
-            <div>
-                <FishMap posts={this.state.posts}/>
+            <div className="postList-wrapper">
+                <div className="mapBoxContainer">
+                    <FishMap posts={this.state.posts}/>
+                </div>
                 <div className="postList-container container">
+                    <h3><strong>Recent Posts:</strong></h3>
+                    
+                    <hr/>
                     {this.renderPosts()}
                 </div>
             </div>

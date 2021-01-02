@@ -7,7 +7,7 @@ const FishMap = (props) => {
         latitude: 47.6062,
         longitude: -122.3321,
         zoom: 10,
-        width: '50vw',
+        width: '100vw',
         height: '50vh'
     });
     
@@ -20,6 +20,10 @@ const FishMap = (props) => {
             };
         };
         window.addEventListener("keydown" , listener);
+
+        return () => {
+            window.removeEventListener("keydown" , listener);
+        }
     },[])
 
     return (
