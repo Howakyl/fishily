@@ -1,5 +1,5 @@
 import React , { useState } from 'react';
-import ReactMapGl, { Marker } from 'react-map-gl';
+import ReactMapGl, { Marker, Popup } from 'react-map-gl';
 
 
 const FishMap = (props) => {
@@ -11,6 +11,8 @@ const FishMap = (props) => {
         height: '50vh'
     });
     
+    const [ selectedPost, setSelectedPost ] = useState(null);
+
     return (
         <div id="mapContainer">
             <ReactMapGl 
@@ -23,11 +25,22 @@ const FishMap = (props) => {
             >
             {props.posts.map((post, index) => (
                 <Marker key={index} latitude={post.lat} longitude={post.lng}>
-                    <button className="markerBtn">
-                        <img src={`${process.env.PUBLIC_URL}/fish-marker.png`} alt=""/>
+                    <button className="markerBtn" onClick={(e) => {
+                        e.preventDefault();
+                        setSelectedPost(post);
+                    }}>
+                        <img src="/fish-marker.png" alt=""/>
                     </button>
                 </Marker>
             ))}
+
+            {selectedPost ? (
+                <Popup latitude={selectedPost.lat} longitude={selectedPost.lng}>
+                    <div>
+                        post!
+                    </div>
+                </Popup>
+            ) : null}
             </ReactMapGl>
         </div>
     )
