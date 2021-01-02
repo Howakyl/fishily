@@ -1,5 +1,6 @@
 import React , { useState } from 'react';
-import ReactMapGl from 'react-map-gl';
+import ReactMapGl, { Marker } from 'react-map-gl';
+
 
 const FishMap = (props) => {
     const [ viewport , setViewport ] = useState({
@@ -20,7 +21,13 @@ const FishMap = (props) => {
                 setViewport(viewport);
             }}
             >
-            
+            {props.posts.map((post, index) => (
+                <Marker key={index} latitude={post.lat} longitude={post.lng}>
+                    <div>
+                        FISH
+                    </div>
+                </Marker>
+            ))}
             </ReactMapGl>
         </div>
     )

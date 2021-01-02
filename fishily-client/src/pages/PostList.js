@@ -37,7 +37,7 @@ class PostList extends React.Component {
     render () {
         return (
             <div>
-                <FishMap/>
+                <FishMap posts={this.state.posts}/>
                 <div className="postList-container container">
                     {this.renderPosts()}
                 </div>
