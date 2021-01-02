@@ -36,9 +36,11 @@ class PostList extends React.Component {
 
     render () {
         return (
-            <div className="postList-container container">
+            <div>
                 <FishMap/>
-                {this.renderPosts()}
+                <div className="postList-container container">
+                    {this.renderPosts()}
+                </div>
             </div>
         )
     }
