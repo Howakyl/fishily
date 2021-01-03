@@ -47,7 +47,7 @@ const Navbar = (props) => {
             return (
                 <>
                     <li className="nav-item active">
-                        <Link className="nav-link" to='/posts/new'>New Post</Link>
+                        <Link className="nav-link" to='/posts/new'>New Catch</Link>
                     </li>
                 </>
             )
@@ -75,11 +75,11 @@ const Navbar = (props) => {
 
             <div className="collapse navbar-collapse" id="fishilyNav">
                 <ul className="navbar-nav ml-auto">
-                <li className="nav-item active">
+                {/* <li className="nav-item active">
                     <Link className="nav-link" to="/users">All Users</Link>
-                </li>
+                </li> */}
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/posts">All Posts</Link>
+                    <Link className="nav-link" to="/posts">All Catches</Link>
                 </li>
 
                 {renderCreatePost()}

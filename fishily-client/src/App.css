@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: 'Poppins' , sans-serif;
+  /* font-family: 'Poppins' , sans-serif; */
+  font-family: 'Inter' , sans-serif;
 }
 
 body {
@@ -41,6 +42,12 @@ nav a:hover {
   text-align: center;
   margin-top: 2rem;
   font-weight: bold;
+}
+
+.newPost-title {
+  margin-top: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .form-control {
@@ -109,6 +116,14 @@ h4 a {
 
 .mapboxgl-popup-close-button:focus {
   outline: none;
+}
+
+.popupPost-img {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: .5rem;
 }
 
 @media only screen and (max-width: 770px) {

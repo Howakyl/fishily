@@ -1,6 +1,6 @@
 import React , { useState, useEffect } from 'react';
 import ReactMapGl, { Marker, Popup } from 'react-map-gl';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const FishMap = (props) => {
@@ -22,11 +22,20 @@ const FishMap = (props) => {
         };
         window.addEventListener("keydown" , listener);
 
+        
         //removes event listener on unmount
         return () => {
             window.removeEventListener("keydown" , listener);
         }
     },[])
+    
+    function displayCatchLocation () {
+        if (selectedPost.locationName) {
+            return <small>Caught At: {selectedPost.locationName}</small>
+        } else {
+            return null;
+        }
+    }
 
     return (
         <div id="mapContainer">
@@ -49,21 +58,31 @@ const FishMap = (props) => {
                 </Marker>
             ))}
 
+            
             {selectedPost ? (
+                
+
                 <Popup 
                     latitude={selectedPost.lat} 
                     longitude={selectedPost.lng}
+                    id="btn-popup"
                     onClose={() => {
-                        setSelectedPost(null);
+                            setSelectedPost(null);
                     }}
+                    offsetLeft={30}
                     >
                     <div className="markerPopup">
-                        <h5>{selectedPost.title}</h5>
-                        {/* <p className="text-truncate">{selectedPost.description}</p> */}
-                        {/* <img src={selectedPost.image} alt=""/> */}
-                        {/* <Link className="btn btn-primary" to={`/posts/${selectedPost._id}`} onClick={console.log('clicked!')}>button!</Link> */}
+                        <img src={selectedPost.image} className="popupPost-img" alt=""/>
+                        <h5><strong>{selectedPost.title}</strong></h5>
+                        <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
+                        {/* <small>Caught At: {selectedPost.locationName}</small> */}
+                        {displayCatchLocation()}
+                        {/* <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`} onClick={((e) => {
+                            console.log('clicked :' , selectedPost)
+                        })}>button!</Link> */}
                     </div>
                 </Popup>
+                
             ) : null}
             </ReactMapGl>
         </div>
