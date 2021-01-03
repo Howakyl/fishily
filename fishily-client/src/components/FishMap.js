@@ -29,6 +29,14 @@ const FishMap = (props) => {
         }
     },[])
     
+    function displayCatchLocation () {
+        if (selectedPost.locationName) {
+            return <small>Caught At: {selectedPost.locationName}</small>
+        } else {
+            return null;
+        }
+    }
+
     return (
         <div id="mapContainer">
             <ReactMapGl 
@@ -67,7 +75,8 @@ const FishMap = (props) => {
                         <img src={selectedPost.image} className="popupPost-img" alt=""/>
                         <h5><strong>{selectedPost.title}</strong></h5>
                         <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
-                        <small>Caught At: {selectedPost.locationName}</small>
+                        {/* <small>Caught At: {selectedPost.locationName}</small> */}
+                        {displayCatchLocation()}
                         {/* <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`} onClick={((e) => {
                             console.log('clicked :' , selectedPost)
                         })}>button!</Link> */}
