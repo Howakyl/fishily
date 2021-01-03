@@ -38,7 +38,7 @@ class NewPost extends React.Component {
         return (
             <div>
                 <form className="container" onSubmit={this.handleFormSubmit}>
-                    <h1>submit a new post!</h1>
+                    <h1 className="newPost-title">submit a new post!</h1>
                     <div className="form-group">
                         <label htmlFor="titleInput">Title</label>
                         <small className="form-text text-muted">required</small>

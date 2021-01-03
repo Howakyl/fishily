@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: 'Poppins' , sans-serif;
+  /* font-family: 'Poppins' , sans-serif; */
+  font-family: 'Inter' , sans-serif;
 }
 
 body {
@@ -41,6 +42,12 @@ nav a:hover {
   text-align: center;
   margin-top: 2rem;
   font-weight: bold;
+}
+
+.newPost-title {
+  margin-top: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .form-control {
