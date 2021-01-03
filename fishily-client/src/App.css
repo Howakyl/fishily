@@ -111,6 +111,14 @@ h4 a {
   outline: none;
 }
 
+.popupPost-img {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-bottom: .5rem;
+}
+
 @media only screen and (max-width: 770px) {
   .newPost-location {
     flex-basis: auto;
