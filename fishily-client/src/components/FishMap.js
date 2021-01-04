@@ -31,7 +31,7 @@ const FishMap = (props) => {
     
     function displayCatchLocation () {
         if (selectedPost.locationName) {
-            return <small>Caught At: {selectedPost.locationName}</small>
+            return <small className="mr-3">Caught At: {selectedPost.locationName}</small>
         } else {
             return null;
         }
@@ -80,7 +80,7 @@ const FishMap = (props) => {
                         {displayCatchLocation()}
                         <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`} onClick={((e) => {
                             console.log('clicked :' , selectedPost)
-                        })}>button!</Link>
+                        })}>Read More</Link>
                     </div>
                 </Popup>
                 
