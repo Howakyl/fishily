@@ -1,6 +1,6 @@
 import React , { useState, useEffect } from 'react';
 import ReactMapGl, { Marker, Popup } from 'react-map-gl';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const FishMap = (props) => {
@@ -69,6 +69,7 @@ const FishMap = (props) => {
                     onClose={() => {
                             setSelectedPost(null);
                     }}
+                    closeOnClick={false}
                     offsetLeft={30}
                     >
                     <div className="markerPopup">
@@ -77,9 +78,9 @@ const FishMap = (props) => {
                         <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
                         {/* <small>Caught At: {selectedPost.locationName}</small> */}
                         {displayCatchLocation()}
-                        {/* <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`} onClick={((e) => {
+                        <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`} onClick={((e) => {
                             console.log('clicked :' , selectedPost)
-                        })}>button!</Link> */}
+                        })}>button!</Link>
                     </div>
                 </Popup>
                 
