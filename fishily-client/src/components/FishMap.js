@@ -73,14 +73,13 @@ const FishMap = (props) => {
                     offsetLeft={30}
                     >
                     <div className="markerPopup">
-                        <img src={selectedPost.image} className="popupPost-img" alt=""/>
-                        <h5><strong>{selectedPost.title}</strong></h5>
-                        <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
-                        {/* <small>Caught At: {selectedPost.locationName}</small> */}
-                        {displayCatchLocation()}
-                        <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`} onClick={((e) => {
-                            console.log('clicked :' , selectedPost)
-                        })}>Read More</Link>
+                        <img src={selectedPost.image} className="popupPost-img" alt={selectedPost.fish}/>
+                        <section className="markerPopup-info">
+                            <h5><strong>{selectedPost.title}</strong></h5>
+                            <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
+                            {displayCatchLocation()}
+                            <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`}>Read More</Link>
+                        </section>
                     </div>
                 </Popup>
                 
