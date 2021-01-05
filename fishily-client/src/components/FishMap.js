@@ -9,7 +9,7 @@ const FishMap = (props) => {
         longitude: -122.3321,
         zoom: 10,
         width: '100vw',
-        height: '50vh'
+        height: '60vh'
     });
     
     const [ selectedPost, setSelectedPost ] = useState(null);
@@ -74,6 +74,7 @@ const FishMap = (props) => {
                     >
                     <div className="markerPopup">
                         <img src={selectedPost.image} className="popupPost-img" alt={selectedPost.fish}/>
+                        
                         <section className="markerPopup-info">
                             <h5><strong>{selectedPost.title}</strong></h5>
                             <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>

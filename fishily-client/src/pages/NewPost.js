@@ -29,8 +29,6 @@ class NewPost extends React.Component {
     }
 
     render () {
-        // console.log(this.state)
-        // console.log('NEW POST PROPS: ',this.props);
 
         if (this.state.redirectToPosts) {
             return <Redirect to="/posts"/>
@@ -125,7 +123,6 @@ class NewPost extends React.Component {
                         />
                     </div>
                     
-                    {/* <input type="hidden" name="user" value={this.props.user._id}/> */}
                     <button type="submit" className="btn btn-primary">Submit Post</button>
                 </form>
             </div>
