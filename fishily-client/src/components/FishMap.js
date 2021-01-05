@@ -1,6 +1,6 @@
 import React , { useState, useEffect } from 'react';
 import ReactMapGl, { Marker, Popup } from 'react-map-gl';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const FishMap = (props) => {
@@ -9,7 +9,7 @@ const FishMap = (props) => {
         longitude: -122.3321,
         zoom: 10,
         width: '100vw',
-        height: '50vh'
+        height: '60vh'
     });
     
     const [ selectedPost, setSelectedPost ] = useState(null);
@@ -31,7 +31,7 @@ const FishMap = (props) => {
     
     function displayCatchLocation () {
         if (selectedPost.locationName) {
-            return <small>Caught At: {selectedPost.locationName}</small>
+            return <small className="mr-3">Caught At: {selectedPost.locationName}</small>
         } else {
             return null;
         }
@@ -69,17 +69,18 @@ const FishMap = (props) => {
                     onClose={() => {
                             setSelectedPost(null);
                     }}
+                    closeOnClick={false}
                     offsetLeft={30}
                     >
                     <div className="markerPopup">
-                        <img src={selectedPost.image} className="popupPost-img" alt=""/>
-                        <h5><strong>{selectedPost.title}</strong></h5>
-                        <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
-                        {/* <small>Caught At: {selectedPost.locationName}</small> */}
-                        {displayCatchLocation()}
-                        {/* <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`} onClick={((e) => {
-                            console.log('clicked :' , selectedPost)
-                        })}>button!</Link> */}
+                        <img src={selectedPost.image} className="popupPost-img" alt={selectedPost.fish}/>
+                        
+                        <section className="markerPopup-info">
+                            <h5><strong>{selectedPost.title}</strong></h5>
+                            <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
+                            {displayCatchLocation()}
+                            <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`}>Read More</Link>
+                        </section>
                     </div>
                 </Popup>
                 
