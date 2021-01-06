@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  /* font-family: 'Poppins' , sans-serif; */
   font-family: 'Inter' , sans-serif;
 }
 
@@ -38,6 +37,8 @@ nav a:hover {
     border: #234a35 2px solid;
 }
 
+/* FORMS */
+
 .logInTitle {
   text-align: center;
   margin-top: 2rem;
@@ -53,6 +54,9 @@ nav a:hover {
 .form-control {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+/* ///////////////// */
+/* LINKS/BUTTONS */
+
 h4 a {
   color: #234a35;
   font-weight: bold;
@@ -75,6 +79,8 @@ h4 a {
 .btn:active:focus {
   background-color: #234a35 !important;
 }
+/* ///////////////// */
+/* HOME PAGE */
 
 .home-container {
   padding-top: 5rem;
@@ -85,6 +91,7 @@ h4 a {
 }
 
 .home-container h1 {
+  text-align: center;
   font-size: 5rem;
   padding-left: 1rem;
   font-weight: 600;
@@ -94,6 +101,8 @@ h4 a {
 .home-container p {
   padding-left: 1rem;
 }
+/* ///////////////// */
+/* MAPBOX */
 
 .markerBtn {
   background: none;
@@ -139,6 +148,8 @@ h4 a {
   background-color: white;
   border-bottom-left-radius: 5px;
 }
+
+/* ///////////////// */
 
 @media only screen and (max-width: 770px) {
   .newPost-location {

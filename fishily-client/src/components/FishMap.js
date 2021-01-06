@@ -1,5 +1,5 @@
 import React , { useState, useEffect } from 'react';
-import ReactMapGl, { Marker, Popup } from 'react-map-gl';
+import ReactMapGl, { Marker, Popup, FlyToInterpolator } from 'react-map-gl';
 import { Link } from 'react-router-dom';
 
 
@@ -37,54 +37,69 @@ const FishMap = (props) => {
         }
     }
 
+    const goToMarker = (clickedMarker) => {
+        setViewport({
+            ...viewport,
+            longitude: clickedMarker.lng,
+            latitude: clickedMarker.lat,
+            zoom: 10,
+            tranistionDuration: 5000,
+            transitionInterpolator: new FlyToInterpolator(),
+        })
+        console.log('clicked!')
+    }
+
     return (
         <div id="mapContainer">
             <ReactMapGl 
-            {...viewport} 
-            mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            mapStyle="mapbox://styles/howakyl/ckjf4skamegso19lhg8mm027h"
-            onViewportChange={(viewport) => {
-                setViewport(viewport);
-            }}
+                {...viewport} 
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+                mapStyle="mapbox://styles/howakyl/ckjf4skamegso19lhg8mm027h"
+                onViewportChange={(viewport) => {
+                    setViewport(viewport);
+                }}
+                // transitionDuration={200}
+                // transitionInterpolator={new FlyToInterpolator(selectedPost)}
             >
-            {props.posts.map((post, index) => (
-                <Marker key={index} latitude={post.lat} longitude={post.lng}>
-                    <button className="markerBtn" onClick={(e) => {
-                        e.preventDefault();
-                        setSelectedPost(post);
-                    }}>
-                        <img src="/fish-marker.png" alt="fish marker"/>
-                    </button>
-                </Marker>
+                {props.posts.map((post, index) => (
+                    <Marker key={index} latitude={post.lat} longitude={post.lng}>
+                        <button className="markerBtn" onClick={(e) => {
+                            e.preventDefault();
+                            setSelectedPost(post);
+                            goToMarker(post);
+                        }}>
+                            <img src="/fish-marker.png" alt="fish marker"/>
+                        </button>
+                    </Marker>
             ))}
 
             
-            {selectedPost ? (
-                
+                {selectedPost ? (
+                    
 
-                <Popup 
-                    latitude={selectedPost.lat} 
-                    longitude={selectedPost.lng}
-                    id="btn-popup"
-                    onClose={() => {
-                            setSelectedPost(null);
-                    }}
-                    closeOnClick={false}
-                    offsetLeft={30}
+                    <Popup 
+                        latitude={selectedPost.lat} 
+                        longitude={selectedPost.lng}
+                        id="btn-popup"
+                        onClose={() => {
+                                setSelectedPost(null);
+                        }}
+                        closeOnClick={false}
+                        offsetLeft={30}
                     >
-                    <div className="markerPopup">
-                        <img src={selectedPost.image} className="popupPost-img" alt={selectedPost.fish}/>
-                        
-                        <section className="markerPopup-info">
-                            <h5><strong>{selectedPost.title}</strong></h5>
-                            <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
-                            {displayCatchLocation()}
-                            <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`}>Read More</Link>
-                        </section>
-                    </div>
-                </Popup>
-                
-            ) : null}
+                        <div className="markerPopup">
+                            <img src={selectedPost.image} className="popupPost-img" alt={selectedPost.fish}/>
+                            
+                            <section className="markerPopup-info">
+                                <h5><strong>{selectedPost.title}</strong></h5>
+                                <p className="popupPost-user"><em>Posted By: {selectedPost.user.username}</em></p>
+                                {displayCatchLocation()}
+                                <Link className="btn btn-primary popupBtn" to={`/posts/${selectedPost._id}`}>Read More</Link>
+                            </section>
+                        </div>
+                    </Popup>
+                    
+                ) : null}
             </ReactMapGl>
         </div>
     )

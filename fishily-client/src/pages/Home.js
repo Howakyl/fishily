@@ -15,7 +15,7 @@ const Home = (props) => {
     return (
         <div className=" home-container">
             <h1>Welcome to Fishily!</h1>
-            {welcomeMsg()}
+            {/* {welcomeMsg()} */}
         </div>
     );
 };
