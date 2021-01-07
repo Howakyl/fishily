@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = (props) => {
 
@@ -12,6 +13,22 @@ const Home = (props) => {
     //     }
     // }
 
+    const getStartedBtn = () => {
+        if (props.user.username) {
+            return (
+                <>
+                    <Link to="/posts/new" className="btn btn-primary heroBtn">Post Your Catch!</Link>
+                </>
+            )
+        } else {
+            return (
+                <>
+                    <Link to="/signup" className="btn btn-primary heroBtn">Get Started</Link>
+                </>
+            )
+        }
+    }
+
     return (
         <div>
             <div className="home-container">
@@ -19,6 +36,7 @@ const Home = (props) => {
                 <a className="btn btn-primary heroBtn" href="#hero-section">What is Fishily?</a>
                 {/* {welcomeMsg()} */}
             </div>
+
             <section id="hero-section" className="hero">
                 <h2>Connecting fishermen around the <span className="hero-emphasis">world</span>.</h2>
                 <div className="hero-card-container">
@@ -34,7 +52,11 @@ const Home = (props) => {
                         <h3 className=" right-on-large"><span className="hero-emphasis">Personalize</span> your profile!</h3>
                         <img src="/hero-images/profile2.png" alt="profile page" className="img-fluid hero-img"/>
                     </div>
+                    <div>
+                        {getStartedBtn()}
+                    </div>
                 </div>
+
             </section>
         </div>
     );
