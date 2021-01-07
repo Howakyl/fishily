@@ -122,6 +122,8 @@ h4 a {
   padding: 15px;
   font-weight: bold;
 }
+/* ///////////////// */
+/* HERO */
 
 .hero {
   text-align: center;
@@ -165,6 +167,8 @@ h4 a {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+/* ///////////////// */
+/* getStarted */
 
 .getStarted {
   background: 
@@ -244,6 +248,8 @@ align-items: flex-start;
   background-color: white;
   border-bottom-left-radius: 5px;
 }
+
+/* SIGNUP */
 
 .signupContainer {
   margin-top: 2rem;

@@ -22,7 +22,6 @@ class SignUp extends React.Component {
 
         UserModel.create(this.state)
         .then((res) => {
-            // this.props.history.push('/login');
             this.setState({ redirectToPosts : true })
         })
     }
