@@ -1,7 +1,10 @@
 * {
   box-sizing: border-box;
-  /* font-family: 'Poppins' , sans-serif; */
   font-family: 'Inter' , sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,7 +14,6 @@ body {
 nav {
   background-color: #EEEEEE !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 nav a {
@@ -38,6 +40,8 @@ nav a:hover {
     border: #234a35 2px solid;
 }
 
+/* FORMS */
+
 .logInTitle {
   text-align: center;
   margin-top: 2rem;
@@ -53,6 +57,9 @@ nav a:hover {
 .form-control {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+/* ///////////////// */
+/* LINKS/BUTTONS */
+
 h4 a {
   color: #234a35;
   font-weight: bold;
@@ -75,16 +82,30 @@ h4 a {
 .btn:active:focus {
   background-color: #234a35 !important;
 }
+/* ///////////////// */
+/* HOME PAGE */
 
 .home-container {
   padding-top: 5rem;
-  background-image: url('https://www.leisurepro.com/blog/wp-content/uploads/2019/05/shutterstock_651678592-1366x800@2x.jpg');
+  background: 
+    linear-gradient(180deg, 
+    rgba(61, 61, 61, 0.42),
+    #1D1D1D
+    ),
+  url('https://www.leisurepro.com/blog/wp-content/uploads/2019/05/shutterstock_651678592-1366x800@2x.jpg');
+  background-image: linear-gradient(rgba(153, 145, 145, 0.418)),
+  url('https://www.leisurepro.com/blog/wp-content/uploads/2019/05/shutterstock_651678592-1366x800@2x.jpg');
   background-size: cover;
   height: 100vh;
   color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .home-container h1 {
+  text-align: center;
   font-size: 5rem;
   padding-left: 1rem;
   font-weight: 600;
@@ -93,6 +114,94 @@ h4 a {
 
 .home-container p {
   padding-left: 1rem;
+}
+
+.heroBtn {
+  margin-top: 10rem;
+  font-size: 25px;
+  padding: 15px;
+  font-weight: bold;
+}
+/* ///////////////// */
+/* HERO */
+
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #f1f1f1;
+}
+
+.hero h2 {
+  margin-top: 8rem;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.hero-emphasis {
+  color: #B4C9AE;
+  font-weight: bold;
+}
+
+.hero-card-container {
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+}
+
+.hero-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-card h3 {
+  font-size: 35px;
+}
+
+.hero-img {
+  width: 490px;
+  height: 185px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* ///////////////// */
+/* getStarted */
+
+.getStarted {
+  background: 
+  linear-gradient(180deg, 
+  rgba(61, 61, 61, 0.42),
+  #1D1D1D
+  ),
+url('https://s.hdnux.com/photos/01/05/73/46/18332077/3/rawImage.jpg');
+background-image: linear-gradient(rgba(153, 145, 145, 0.418)),
+url('https://s.hdnux.com/photos/01/05/73/46/18332077/3/rawImage.jpg');
+background-size: cover;
+height: 500px;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+}
+
+/* ///////////////// */
+/* MAPBOX */
+
+#info {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0px auto;
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #222;
+  background: #f1f1f1;
 }
 
 .markerBtn {
@@ -140,6 +249,37 @@ h4 a {
   border-bottom-left-radius: 5px;
 }
 
+/* SIGNUP */
+
+.signupContainer {
+  margin-top: 2rem;
+}
+
+.signupContainer h1 {
+  text-align: center;
+}
+
+/* ///////////////// */
+
+@media only screen and (max-width: 1100px) {
+  .hero {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .hero img {
+    margin-bottom: 5rem;
+  }
+
+  .flip-on-small {
+    flex-direction: column-reverse;
+  }
+
+  h3 {
+    margin-bottom: 3rem;
+  }
+}
+
 @media only screen and (max-width: 770px) {
   .newPost-location {
     flex-basis: auto;
@@ -147,7 +287,7 @@ h4 a {
 }
 
 @media only screen and (max-width: 750px) {
-  .home-container {
+  .home-container , .getStarted {
     background-position: center;
   }
 }

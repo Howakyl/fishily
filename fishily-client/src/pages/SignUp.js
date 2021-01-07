@@ -22,7 +22,6 @@ class SignUp extends React.Component {
 
         UserModel.create(this.state)
         .then((res) => {
-            // this.props.history.push('/login');
             this.setState({ redirectToPosts : true })
         })
     }
@@ -39,7 +38,7 @@ class SignUp extends React.Component {
             return <Redirect to='/'/>
         } else {
             return (
-                <div>
+                <div className="signupContainer">
                     <form className="container" onSubmit={this.handleFormSubmit}>
                         <h1>Sign Up!</h1>
                         <div className="form-group">
@@ -56,7 +55,7 @@ class SignUp extends React.Component {
                         </div>
                         <div className="form-group">
                             <label htmlFor="passInput">Password</label>
-                            <small className="form-text text-muted">required - Don't use a sensitive password!</small>
+                            <small className="form-text text-muted">required</small>
                             <input
                                 onChange={this.handleInputChange}
                                 type="password" 
