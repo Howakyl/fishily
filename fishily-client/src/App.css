@@ -3,6 +3,10 @@
   font-family: 'Inter' , sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #b4c9af;
 }
@@ -10,7 +14,6 @@ body {
 nav {
   background-color: #EEEEEE !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 nav a {
@@ -88,6 +91,9 @@ h4 a {
   background-size: cover;
   height: 100vh;
   color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-container h1 {
@@ -101,6 +107,18 @@ h4 a {
 .home-container p {
   padding-left: 1rem;
 }
+
+.heroBtn {
+  margin-top: 10rem;
+  font-size: 25px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+#hero {
+  height: 1000px;
+}
+
 /* ///////////////// */
 /* MAPBOX */
 

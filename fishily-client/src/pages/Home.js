@@ -13,9 +13,15 @@ const Home = (props) => {
     }
 
     return (
-        <div className=" home-container">
-            <h1>Welcome to Fishily!</h1>
-            {/* {welcomeMsg()} */}
+        <div>
+            <div className="home-container">
+                <h1>Welcome to Fishily!</h1>
+                <a className="btn btn-primary heroBtn" href="#hero">What is Fishily?</a>
+                {/* {welcomeMsg()} */}
+            </div>
+            <section id="hero">
+                <h3>Connecting fishermen around the world.</h3>
+            </section>
         </div>
     );
 };

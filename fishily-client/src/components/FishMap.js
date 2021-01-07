@@ -44,9 +44,8 @@ const FishMap = (props) => {
             latitude: clickedMarker.lat,
             zoom: 10,
             tranistionDuration: 5000,
-            transitionInterpolator: new FlyToInterpolator(),
+            transitionInterpolator: new FlyToInterpolator({ speed: 1.2 }),
         })
-        console.log('clicked!')
     }
 
     return (
@@ -58,8 +57,6 @@ const FishMap = (props) => {
                 onViewportChange={(viewport) => {
                     setViewport(viewport);
                 }}
-                // transitionDuration={200}
-                // transitionInterpolator={new FlyToInterpolator(selectedPost)}
             >
                 {props.posts.map((post, index) => (
                     <Marker key={index} latitude={post.lat} longitude={post.lng}>
@@ -67,6 +64,7 @@ const FishMap = (props) => {
                             e.preventDefault();
                             setSelectedPost(post);
                             goToMarker(post);
+                            
                         }}>
                             <img src="/fish-marker.png" alt="fish marker"/>
                         </button>
