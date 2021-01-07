@@ -52,12 +52,12 @@ const Home = (props) => {
                         <h3 className=" right-on-large"><span className="hero-emphasis">Personalize</span> your profile!</h3>
                         <img src="/hero-images/profile2.png" alt="profile page" className="img-fluid hero-img"/>
                     </div>
-                    <div>
-                        {getStartedBtn()}
-                    </div>
                 </div>
 
             </section>
+                    <div className="getStarted">
+                        {getStartedBtn()}
+                    </div>
         </div>
     );
 };
