@@ -115,8 +115,20 @@ h4 a {
   font-weight: bold;
 }
 
-#hero {
-  height: 1000px;
+#hero-section {
+  height: 800px;
+}
+
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+.hero h2 {
+  margin-top: 8rem;
+  font-weight: bold;
 }
 
 /* ///////////////// */

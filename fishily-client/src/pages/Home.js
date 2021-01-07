@@ -16,11 +16,11 @@ const Home = (props) => {
         <div>
             <div className="home-container">
                 <h1>Welcome to Fishily!</h1>
-                <a className="btn btn-primary heroBtn" href="#hero">What is Fishily?</a>
+                <a className="btn btn-primary heroBtn" href="#hero-section">What is Fishily?</a>
                 {/* {welcomeMsg()} */}
             </div>
-            <section id="hero">
-                <h3>Connecting fishermen around the world.</h3>
+            <section id="hero-section" className="hero">
+                <h2>Connecting fishermen around the world.</h2>
             </section>
         </div>
     );
