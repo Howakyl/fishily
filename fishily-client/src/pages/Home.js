@@ -21,23 +21,24 @@ const Home = (props) => {
             </div>
             <section id="hero-section" className="hero">
                 <h2>Connecting fishermen around the <span className="hero-emphasis">world</span>.</h2>
-                <div className="hero-card">
-                    <h3>Find your new <span className="hero-emphasis">Favorite</span> fishing hole!</h3>
-                    <img src="/hero-images/map.png" className="img-fluid hero-img" alt="map"/>
-                </div>
-                <div className="hero-card">
-                    <img className="img-fluid hero-img" src="/hero-images/post-card.png" alt="post"/>
-                    <h3>Show off those <span className="hero-emphasis">Big</span> catches.</h3>
-                </div>
-                <div className="hero-card">
-                    <h3>Personalize your profile!</h3>
-                    <img src="/hero-images/profile2.png" alt="profile page" className="img-fluid profile-img"/>
+                <div className="hero-card-container">
+                    <div className="hero-card">
+                        <h3 className="right-on-large">Find your new <span className="hero-emphasis">Favorite</span> fishing hole!</h3>
+                        <img src="/hero-images/map.png" className="img-fluid hero-img" alt="map"/>
+                    </div>
+                    <div className="hero-card flip-on-small">
+                        <img className="img-fluid hero-img" src="/hero-images/post-card.png" alt="post"/>
+                        <h3>Show off those <span className="hero-emphasis">Big</span> catches.</h3>
+                    </div>
+                    <div className="hero-card">
+                        <h3 className=" right-on-large"><span className="hero-emphasis">Personalize</span> your profile!</h3>
+                        <img src="/hero-images/profile2.png" alt="profile page" className="img-fluid hero-img"/>
+                    </div>
                 </div>
             </section>
         </div>
     );
 };
 
-// 47.661262 -122.434
 
 export default Home;
