@@ -20,13 +20,20 @@ const Home = (props) => {
                 {/* {welcomeMsg()} */}
             </div>
             <section id="hero-section" className="hero">
-                <h2>Connecting fishermen around the <span>world</span>.</h2>
-                <p>Show off those big catches.</p>
+                <h2>Connecting fishermen around the <span className="hero-emphasis">world</span>.</h2>
+                <div className="hero-card">
+                    <img className="img-fluid hero-img" src="/hero-images/post-card.png" alt=""/>
+                    <h3>Show off those <span className="hero-emphasis">big</span> catches.</h3>
+                </div>
+                <div className="hero-card">
+                    <h3>Find your new favorite fishing hole.</h3>
+                    <img src="/hero-images/map.png" className="img-fluid hero-img" alt=""/>
+                </div>
             </section>
         </div>
     );
 };
 
-// 47.6 -122.4
+// 47.661262 -122.434
 
 export default Home;

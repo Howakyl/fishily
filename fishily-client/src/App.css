@@ -131,7 +131,7 @@ h4 a {
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: space-around;
   background-color: #f1f1f1;
 }
 
@@ -141,8 +141,22 @@ h4 a {
   font-size: 40px;
 }
 
-h2 span {
+.hero-emphasis {
   color: #B4C9AE;
+}
+
+
+
+
+.hero-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-img {
+  max-width: 500px;
 }
 
 /* ///////////////// */
@@ -160,7 +174,7 @@ h2 span {
   font-size: 12px;
   text-align: center;
   color: #222;
-  background: #fff;
+  background: #f1f1f1;
 }
 
 .markerBtn {
