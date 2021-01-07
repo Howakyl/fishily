@@ -143,10 +143,8 @@ h4 a {
 
 .hero-emphasis {
   color: #B4C9AE;
+  font-weight: bold;
 }
-
-
-
 
 .hero-card {
   display: flex;
@@ -157,6 +155,16 @@ h4 a {
 
 .hero-img {
   max-width: 500px;
+  max-height: 185px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.profile-img {
+  width: 500px;
+  max-height: 185px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* ///////////////// */
