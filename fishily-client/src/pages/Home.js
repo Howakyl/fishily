@@ -21,9 +21,12 @@ const Home = (props) => {
             </div>
             <section id="hero-section" className="hero">
                 <h2>Connecting fishermen around the <span>world</span>.</h2>
+                <p>Show off those big catches.</p>
             </section>
         </div>
     );
 };
+
+// 47.6 -122.4
 
 export default Home;

@@ -57,6 +57,9 @@ const FishMap = (props) => {
                 onViewportChange={(viewport) => {
                     setViewport(viewport);
                 }}
+                onMouseMove={(e) => {
+                    document.getElementById('info').innerHTML = JSON.stringify(e.lngLat);
+                }}
             >
                 {props.posts.map((post, index) => (
                     <Marker key={index} latitude={post.lat} longitude={post.lng}>
@@ -71,7 +74,7 @@ const FishMap = (props) => {
                     </Marker>
             ))}
 
-            
+            <pre id="info"></pre>
                 {selectedPost ? (
                     
 

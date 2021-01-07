@@ -139,7 +139,6 @@ h4 a {
   margin-top: 8rem;
   font-weight: bold;
   font-size: 40px;
-  line-height: 2;
 }
 
 h2 span {
@@ -148,6 +147,21 @@ h2 span {
 
 /* ///////////////// */
 /* MAPBOX */
+
+#info {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0px auto;
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  text-align: center;
+  color: #222;
+  background: #fff;
+}
 
 .markerBtn {
   background: none;
