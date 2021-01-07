@@ -87,13 +87,21 @@ h4 a {
 
 .home-container {
   padding-top: 5rem;
-  background-image: url('https://www.leisurepro.com/blog/wp-content/uploads/2019/05/shutterstock_651678592-1366x800@2x.jpg');
+  background: 
+    linear-gradient(180deg, 
+    rgba(61, 61, 61, 0.42),
+    #1D1D1D
+    ),
+  url('https://www.leisurepro.com/blog/wp-content/uploads/2019/05/shutterstock_651678592-1366x800@2x.jpg');
+  background-image: linear-gradient(rgba(153, 145, 145, 0.418)),
+  url('https://www.leisurepro.com/blog/wp-content/uploads/2019/05/shutterstock_651678592-1366x800@2x.jpg');
   background-size: cover;
   height: 100vh;
   color: #f1f1f1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .home-container h1 {
@@ -124,11 +132,18 @@ h4 a {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
+  background-color: #f1f1f1;
 }
 
 .hero h2 {
   margin-top: 8rem;
   font-weight: bold;
+  font-size: 40px;
+  line-height: 2;
+}
+
+h2 span {
+  color: #B4C9AE;
 }
 
 /* ///////////////// */

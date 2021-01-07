@@ -20,7 +20,7 @@ const Home = (props) => {
                 {/* {welcomeMsg()} */}
             </div>
             <section id="hero-section" className="hero">
-                <h2>Connecting fishermen around the world.</h2>
+                <h2>Connecting fishermen around the <span>world</span>.</h2>
             </section>
         </div>
     );
