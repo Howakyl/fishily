@@ -3,7 +3,6 @@ require('dotenv').config();
 const cors = require('cors');
 const routes = require('./routes');
 const session = require('express-session');
-// import { format } from 'date-fns';
 
 const port = process.env.PORT || 4000;
 const app = express();

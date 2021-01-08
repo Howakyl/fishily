@@ -25,9 +25,11 @@ const postSchema = new Schema({
     },
     lat: {
         type: Number,
+        required: true
     },
     lng: {
         type: Number,
+        required: true
     },
     image: {
         type: String,
