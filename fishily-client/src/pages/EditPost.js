@@ -20,7 +20,6 @@ class EditPost extends React.Component {
         PostModel.getOne(postId)
             .then((data) => {
                 const res = data.data.post;
-                console.log('RESPONSE: ' , res)
                 this.setState({ 
                     
                     title : res.title,
@@ -45,13 +44,11 @@ class EditPost extends React.Component {
         const postId = this.props.match.params.id;
         PostModel.update(postId, this.state)
             .then((res) => {
-                console.log('updated post: ' , res);
                 this.props.history.push(`/posts/${postId}`);
             });
     };
     
     render() {
-        console.log(this.state)
 
         if (this.state.loading) {
             return <div>Loading...</div>

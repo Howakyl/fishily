@@ -5,15 +5,6 @@ import Slide from 'react-reveal/Slide';
 
 const Home = (props) => {
 
-    // function welcomeMsg () {
-    //     if (props.user.username) {
-    //         return (
-    //             <>
-    //                 <p>Logged in as: {props.user.username}</p>
-    //             </>
-    //         )
-    //     }
-    // }
 
     const getStartedBtn = () => {
         if (props.user.username) {
@@ -36,7 +27,6 @@ const Home = (props) => {
             <div className="home-container">
                 <h1>Welcome to <span className="home-title">Fishily</span>!</h1>
                 <a className="btn btn-primary heroBtn" href="#hero-section">What is Fishily?</a>
-                {/* {welcomeMsg()} */}
             </div>
 
             <section id="hero-section" className="hero">

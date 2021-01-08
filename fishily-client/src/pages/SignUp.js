@@ -29,7 +29,6 @@ class SignUp extends React.Component {
 
     render () {
 
-        console.log(this.props)
         if(this.state.redirectToPosts) {
             return <Redirect to='/login'/>
         }

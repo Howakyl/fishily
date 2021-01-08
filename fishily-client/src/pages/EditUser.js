@@ -15,7 +15,6 @@ const EditUser = (props) => {
         UserModel.getOne(userId)
             .then((data) => {
                 const res = data.data.user;
-                console.log(res);
                 setUsername(res.username);
                 setFirstName(res.firstName);
                 setLastName(res.lastName);
@@ -40,7 +39,6 @@ const EditUser = (props) => {
 
         UserModel.update(userId, formData)
             .then((res) => {
-                console.log('updated user: ', res);
                 localStorage.setItem("user" , JSON.stringify(res.data.user));
                 props.history.push(`/users/${userId}`);
             });
