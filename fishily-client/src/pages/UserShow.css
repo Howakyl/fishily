@@ -26,6 +26,11 @@
     overflow: hidden;
 }
 
+.userShow-posts-container {
+    overflow: scroll;
+    height: 550px;
+}
+
 .userShow-posts-title {
     text-align: center;
 }

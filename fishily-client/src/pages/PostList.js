@@ -41,7 +41,7 @@ class PostList extends React.Component {
                     <FishMap posts={this.state.posts}/>
                 </div>
                 <div className="postList-container container">
-                    <h3><strong>Recent Posts:</strong></h3>
+                    <h3 className="postList-title"><strong>Recent Posts:</strong></h3>
                     
                     <hr/>
                     {this.renderPosts()}

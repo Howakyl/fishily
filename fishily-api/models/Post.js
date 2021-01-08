@@ -17,7 +17,7 @@ const postSchema = new Schema({
     },
     date: {
         type: Date,
-        default: new Date().toLocaleDateString()
+        default: Date.now()
     },
     locationName: {
         type: String,
@@ -25,9 +25,11 @@ const postSchema = new Schema({
     },
     lat: {
         type: Number,
+        required: true
     },
     lng: {
         type: Number,
+        required: true
     },
     image: {
         type: String,
