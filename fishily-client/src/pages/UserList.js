@@ -12,7 +12,6 @@ class UserList extends React.Component {
     componentDidMount() {
 
         UserModel.all().then((res) => {
-            console.log('data:', res);
 
             this.setState({ 
                 users: res.data.users,
@@ -23,7 +22,6 @@ class UserList extends React.Component {
 
     renderUsers () {
         
-        // console.log(this.state)
         return this.state.users.map((user) => {
             return (
                 <li className="userList-card" key={user._id}>

@@ -34,13 +34,11 @@ const create = (req,res) => {
     db.User.findById(userId)
         .then((foundUser) => {
             req.body.user = userId;
-            console.log('REQ BODY: ' ,req.body);
             db.Post.create(req.body)
                 .then((createdPost) => {
                     foundUser.posts.push(createdPost._id);
                     foundUser.save((err, savedUser) => {
                         if(err) return console.log(err);
-                        console.log(savedUser);
                     });
                     res.json({ post: createdPost});
                 })
@@ -48,7 +46,6 @@ const create = (req,res) => {
                     console.log('error creating post: ', err);
                     res.json({ Error: 'Unable to create post.'});
                 })
-            console.log(foundUser);
             
         })
         .catch((err) => {
@@ -86,7 +83,6 @@ const destroy = (req,res) => {
                 foundUser.posts.remove(postId);
                 foundUser.save((err, savedUser) => {
                     if (err) return console.log(err);
-                    console.log('updated User: ', savedUser);
                 });
             });
 

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { format } from 'date-fns';
+
 
 const PostCard  = (props) => {
     
-    console.log(props.post.date)
     return (
         
         <div className="card mb-3 postList-card" style={{maxWidth: "540px"}}>

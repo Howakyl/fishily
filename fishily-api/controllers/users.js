@@ -38,7 +38,6 @@ const create = (req,res) => {
         };
 
         bcrypt.genSalt(10, (err, salt) => {
-            // CHANGE THIS TO JUST LOG ERROR <----
             if (err) return console.log(err); 
 
             bcrypt.hash(req.body.password, salt, (err, hashedPassword) => {
@@ -74,7 +73,6 @@ const update = (req,res) => {
         { new: true })
             .then((updatedUser) => {
                 res.json({ user: updatedUser });
-                console.log('Updated user: ' , updatedUser);
             })
             .catch((err) => {
                 console.log('error updating user: ', err);
@@ -89,7 +87,6 @@ const destroy = (req,res) => {
 
             db.Post.deleteMany({_id: {$in: deletedUser.posts }} , (err, result) => {
                 if (err) return console.log(err);
-                console.log('result from deleteMany: ', result);
             });
 
             res.json({ user: deletedUser });
@@ -113,7 +110,6 @@ const logIn = (req,res) => {
         // Verify user password with login password
         bcrypt.compare(req.body.password, user.password, (err, isMatch) => {
             if (err) return console.log('error comparing passwords');
-            console.log(isMatch)
 
             if(isMatch) {
                 req.session.currentUser = user;

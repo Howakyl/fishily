@@ -50,7 +50,6 @@ class PostDetail extends React.Component {
     }
 
     render () {
-        console.log('post detail props:',this.state.post)
         if (this.state.redirectToPosts) {
             return <Redirect to="/posts"/>
         }

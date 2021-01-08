@@ -7,7 +7,6 @@ const Navbar = (props) => {
         
         UserModel.logout(props)
         .then((res) => {
-            console.log( 'THIS THING:', props);
             props.setUser({});
             localStorage.clear();
         })
@@ -75,9 +74,6 @@ const Navbar = (props) => {
 
             <div className="collapse navbar-collapse" id="fishilyNav">
                 <ul className="navbar-nav ml-auto">
-                {/* <li className="nav-item active">
-                    <Link className="nav-link" to="/users">All Users</Link>
-                </li> */}
                 <li className="nav-item active">
                     <Link className="nav-link" to="/posts">All Catches</Link>
                 </li>
@@ -85,9 +81,6 @@ const Navbar = (props) => {
                 {renderCreatePost()}
                 {loginNav()}
                 </ul>
-                {/* <form className="form-inline my-2 my-md-0">
-                <input className="form-control" type="text" placeholder="Search"/>
-                </form> */}
                 {renderProfileImg()}
             </div>
         </nav>
