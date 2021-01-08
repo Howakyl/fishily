@@ -85,6 +85,13 @@ h4 a {
 /* ///////////////// */
 /* HOME PAGE */
 
+.home-title {
+  /* font-family: 'Pacifico' , cursive;
+  font-weight: normal; */
+  color: #B4C9AE;
+
+}
+
 .home-container {
   padding-top: 5rem;
   background: 
@@ -154,7 +161,7 @@ h4 a {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 3rem;
+  margin-bottom: 175px;
 }
 
 .hero-card h3 {
@@ -287,8 +294,12 @@ align-items: flex-start;
 }
 
 @media only screen and (max-width: 750px) {
-  .home-container , .getStarted {
+  .home-container {
     background-position: center;
+  }
+
+  .getStarted {
+    background-position: right;
   }
 }
 
