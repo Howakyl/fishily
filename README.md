@@ -13,9 +13,12 @@ Upon landing on the "home" page, users will be met with a short introduction int
 
  * Users can view their profile, and make changes to their info as well, such as their profile picture, and their "bio".
 
+ ![profile] (wireframe-images/profile-final.png)
+
 On Fishily, users can: 
 * create an account, with their username, name, and password.
 * The Primary purpose of the app is for users to create posts.
+![newpost] (wireframe-images/newpost.png)
     * posts will have titles, descriptions, the fish caught, location, and optionally an image,and date/time.
     * When creating a post, users can set coordinates in a form, to create a pin on a map (using MapBox API) to show others (roughly) where they caught their delicious fish!
     * STRETCH GOAL: Users will also be able to leave comments on other users posts.
