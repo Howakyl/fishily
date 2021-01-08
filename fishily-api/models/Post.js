@@ -17,7 +17,7 @@ const postSchema = new Schema({
     },
     date: {
         type: Date,
-        default: new Date().toLocaleDateString()
+        default: Date.now()
     },
     locationName: {
         type: String,
