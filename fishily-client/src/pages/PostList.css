@@ -18,6 +18,11 @@
     border: #234a35 2px solid;
 }
 
+.postList-title {
+    font-size: 35px;
+    letter-spacing: 1.5px;
+}
+
 .post-list-username {
     display: inline-block;
     margin-right: .5rem;
