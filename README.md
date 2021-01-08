@@ -9,6 +9,8 @@ Upon landing on the "home" page, users will be met with a short introduction int
 
  * If they are logged in, this will redirect them to the "index" page, which will show a google map showing fishing spot pins.
 
+ ![map] (wireframe-images/map.png)
+
  * Users can view their profile, and make changes to their info as well, such as their profile picture, and their "bio".
 
 On Fishily, users can: 
