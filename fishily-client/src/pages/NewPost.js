@@ -86,7 +86,7 @@ class NewPost extends React.Component {
                             />
                         </div>
                         <div className="form-group col">
-                            <label htmlFor="latInput">Latitude</label>
+                            <label htmlFor="latInput">Latitude<span className="text-muted"> - required</span></label>
                             <input
                                 onChange={this.handleInputChange}
                                 type="number" 
@@ -98,7 +98,7 @@ class NewPost extends React.Component {
                             />
                         </div>
                         <div className="form-group col">
-                            <label htmlFor="lngInput">Longitude</label>
+                            <label htmlFor="lngInput">Longitude<span className="text-muted"> - required</span></label>
                             <input
                                 onChange={this.handleInputChange}
                                 type="number" 
