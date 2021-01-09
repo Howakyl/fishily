@@ -9,7 +9,7 @@ const app = express();
 
 let origin;
 if (process.env.NODE_ENV === 'production') {
-    origin = 'https://fishily-frontend.herokuapp.com/';
+    origin = 'https://fishily-frontend.herokuapp.com';
 } else {
     origin = 'http://localhost:3000';
 }
