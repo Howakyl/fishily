@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publishToHeroku": "cd ../ && git subtree push --prefix frontend heroku-fishily-frontend master || true"
+    "publishToHeroku": "cd ../ && git subtree push --prefix fishily-client heroku main || true"
   },
   "eslintConfig": {
     "extends": [
