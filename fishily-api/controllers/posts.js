@@ -3,6 +3,7 @@ const db = require("../models/");
 // ALL POSTS
 const index = (req,res) => {
     db.Post.find({})
+        .populate("user")
         .then((foundPosts) => {
             res.json({ posts: foundPosts});
         })
@@ -16,6 +17,7 @@ const index = (req,res) => {
 const show = (req,res) => {
 
     db.Post.findById(req.params.id)
+        .populate("user")
         .then((foundPost) => {
             res.json({ post: foundPost });
         })
@@ -31,14 +33,12 @@ const create = (req,res) => {
     const userId = req.params.id;
     db.User.findById(userId)
         .then((foundUser) => {
-            // console.log('FOUND USER:' , foundUser);
+            req.body.user = userId;
             db.Post.create(req.body)
                 .then((createdPost) => {
-                    // console.log('CREATED POST:', createdPost)
                     foundUser.posts.push(createdPost._id);
                     foundUser.save((err, savedUser) => {
                         if(err) return console.log(err);
-                        console.log(savedUser);
                     });
                     res.json({ post: createdPost});
                 })
@@ -46,7 +46,6 @@ const create = (req,res) => {
                     console.log('error creating post: ', err);
                     res.json({ Error: 'Unable to create post.'});
                 })
-            console.log(foundUser);
             
         })
         .catch((err) => {
@@ -84,7 +83,6 @@ const destroy = (req,res) => {
                 foundUser.posts.remove(postId);
                 foundUser.save((err, savedUser) => {
                     if (err) return console.log(err);
-                    console.log('updated User: ', savedUser);
                 });
             });
 

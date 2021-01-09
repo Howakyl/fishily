@@ -1,0 +1,72 @@
+.userShow-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2rem; 
+    flex-wrap: wrap;
+}
+
+.userShow-info {
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+.user-detail-img {
+    max-width: 400px;
+    border-radius: 10px;
+    border: #234a35 2px solid;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-detail-post-img {
+    height: 100%;
+}
+
+.userShow-bio {
+    overflow: hidden;
+}
+
+.userShow-posts-container {
+    overflow: scroll;
+    height: 550px;
+}
+
+.userShow-posts-title {
+    text-align: center;
+}
+
+.userShow-post-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.userShow-username {
+    margin-top: 2rem;
+}
+
+.userShow-name {
+    color: #555;
+}
+
+.userShow-btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.userShow-btns a {
+    color: white !important;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 770px) {
+    .userShow-posts-container {
+        max-width: 400px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .userShow-container{
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+}

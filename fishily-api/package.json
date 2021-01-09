@@ -4,7 +4,8 @@
   "description": "Find your new favorite fishing spot!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publishToHeroku": "cd ../ && git subtree push --prefix fishily-api heroku-fishily-backend submain || true"
   },
   "author": "Kyle Howard",
   "license": "ISC",

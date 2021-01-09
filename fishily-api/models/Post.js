@@ -17,19 +17,19 @@ const postSchema = new Schema({
     },
     date: {
         type: Date,
-        default: Date.now,
+        default: Date.now()
     },
-    location: {
-        name: {
-            type: String,
-            default: 'Unknown',
-        },
-        lat: {
-            type: Number,
-        },
-        lng: {
-            type: Number,
-        }
+    locationName: {
+        type: String,
+        default: 'Unknown',
+    },
+    lat: {
+        type: Number,
+        required: true
+    },
+    lng: {
+        type: Number,
+        required: true
     },
     image: {
         type: String,

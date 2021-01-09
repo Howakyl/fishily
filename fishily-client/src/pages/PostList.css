@@ -1,0 +1,49 @@
+.postList-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.postList-container img {
+    height: 100%;
+}
+
+#post-list-user-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: #234a35 2px solid;
+}
+
+.postList-title {
+    font-size: 35px;
+    letter-spacing: 1.5px;
+}
+
+.post-list-username {
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+.post-list-container , .card { 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+}
+
+.mapBoxContainer {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-top: 1px solid #234a35;
+}
+
+@media only screen and (max-width: 770px) {
+    .postList-card {
+        max-width: 400px !important;
+    }
+
+    .postList-card img {
+        max-height: 300px;
+    }
+}

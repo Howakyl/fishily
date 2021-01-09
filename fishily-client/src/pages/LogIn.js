@@ -17,23 +17,21 @@ class LogIn extends React.Component {
 
         UserModel.login(this.state)
             .then((res) => {
-                console.log(res.data);
                 this.props.setUser(res.data);
+                localStorage.setItem("user" , JSON.stringify(res.data));
             });
     };
 
     render () {
-        console.log('PROPS: ',this.props)
         if(this.props.user.username) {
-            return <Redirect to='/'/>
+            return <Redirect to='/posts'/>
         } else {
             return (
                 <div>
                     <form className="container" onSubmit={this.handleFormSubmit}>
-                        <h1>Log In!</h1>
+                        <h1 className="logInTitle">Log In!</h1>
                         <div className="form-group">
                             <label htmlFor="usernameInput">username</label>
-                            <small className="form-text text-muted">required</small>
                             <input
                                 onChange={this.handleInputchange}
                                 type="text" 
@@ -43,6 +41,7 @@ class LogIn extends React.Component {
                                 name="username"
                             />
                         </div>
+                        <br/>
                         <div className="form-group">
                             <label htmlFor="passInput">Password</label>
                             <input

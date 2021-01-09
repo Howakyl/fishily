@@ -7,10 +7,16 @@ const Navbar = (props) => {
         
         UserModel.logout(props)
         .then((res) => {
-            console.log( 'THIS THING:', props);
-            props.setUser({})
+            props.setUser({});
+            localStorage.clear();
         })
     }
+
+    function confirmLogOut () {
+        const confirmLogOut = window.confirm('are you sure you want to log out?');
+        if (confirmLogOut === true) return logOutClick();
+    }
+    
 
     function loginNav() {
         if(!props.user.username) {
@@ -28,7 +34,7 @@ const Navbar = (props) => {
             return (
                 <>
                 <li className="nav-item ">
-                    <Link className="nav-link" to="/" onClick={logOutClick}>Log Out</Link>
+                    <Link className="nav-link" to="/" onClick={confirmLogOut}>Log Out</Link>
                 </li>
                 </>
             )
@@ -40,35 +46,42 @@ const Navbar = (props) => {
             return (
                 <>
                     <li className="nav-item active">
-                        <Link className="nav-link" to='/posts/new'>New Post</Link>
+                        <Link className="nav-link" to='/posts/new'>New Catch</Link>
                     </li>
                 </>
             )
         }
     }
 
+    function renderProfileImg () {
+        if (props.user.username) {
+            return (
+                <Link to={`/users/${props.user._id}`}>
+                    <img src={props.user.picture} alt="profile" className="navbar-user-img"/>
+                </Link>
+            )
+        }
+    }
+
     return (
-        <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-            <Link className="navbar-brand" to="/">Fishily</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-md navbar-light">
+            <div className="nav-title">
+                <Link className="navbar-brand navbar-title" to="/">Fishily</Link>
+            </div>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#fishilyNav" aria-controls="fishilyNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <div className="collapse navbar-collapse" id="navbarsExample04">
-                <ul className="navbar-nav mr-auto">
+            <div className="collapse navbar-collapse" id="fishilyNav">
+                <ul className="navbar-nav ml-auto">
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/users">All users</Link>
-                </li>
-                <li className="nav-item active">
-                    <Link className="nav-link" to="/posts">All Posts</Link>
+                    <Link className="nav-link" to="/posts">All Catches</Link>
                 </li>
 
                 {renderCreatePost()}
                 {loginNav()}
                 </ul>
-                {/* <form className="form-inline my-2 my-md-0">
-                <input className="form-control" type="text" placeholder="Search"/>
-                </form> */}
+                {renderProfileImg()}
             </div>
         </nav>
     )

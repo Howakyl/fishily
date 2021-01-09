@@ -1,8 +1,8 @@
 import React from 'react';
 import PostModel from '../models/post';
-import { Redirect } from 'react-router-dom';
+import './EditPost.css';
 
-class NewPost extends React.Component {
+class EditPost extends React.Component {
     state = {
         title : '',
         description: '',
@@ -10,33 +10,53 @@ class NewPost extends React.Component {
         locationName: '',
         lat: undefined,
         lng: undefined,
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fish_icon.svg/1200px-Fish_icon.svg.png',
-        redirectToPosts: false
+        image: '',
+        post: {},
+        loading: true
     }
+
+    componentDidMount() {
+        const postId = this.props.match.params.id;
+        PostModel.getOne(postId)
+            .then((data) => {
+                const res = data.data.post;
+                this.setState({ 
+                    
+                    title : res.title,
+                    description: res.description,
+                    fish: res.fish,
+                    locationName: res.locationName,
+                    lat: res.lat,
+                    lng: res.lng,
+                    image: res.image,
+                    loading: false,
+                })
+            })
+    };
 
     handleInputChange = (event) => {
         this.setState({ [event.target.name] : event.target.value });
     };
 
-
     handleFormSubmit = (event) => {
         event.preventDefault();
 
-        PostModel.create(this.state, this.props.user._id)
+        const postId = this.props.match.params.id;
+        PostModel.update(postId, this.state)
             .then((res) => {
-                this.setState({ redirectToPosts : true})
-            })
-    }
+                this.props.history.push(`/posts/${postId}`);
+            });
+    };
+    
+    render() {
 
-    render () {
-
-        if (this.state.redirectToPosts) {
-            return <Redirect to="/posts"/>
-        } 
+        if (this.state.loading) {
+            return <div>Loading...</div>
+        }
         return (
             <div>
-                <form className="container" onSubmit={this.handleFormSubmit}>
-                    <h1 className="newPost-title">submit a new post!</h1>
+                <form className="container editPost-form" onSubmit={this.handleFormSubmit}>
+                        <h1>Edit your post!</h1>
                     <div className="form-group">
                         <label htmlFor="titleInput">Title</label>
                         <small className="form-text text-muted">required</small>
@@ -74,7 +94,7 @@ class NewPost extends React.Component {
                     </div>
 
                     <section className="row">
-                        <div className="form-group col newPost-location">
+                        <div className="form-group col editPost-location">
                             <label htmlFor="locationInput">Where Was Your Catch?</label>
                             <input
                                 onChange={this.handleInputChange}
@@ -86,7 +106,7 @@ class NewPost extends React.Component {
                             />
                         </div>
                         <div className="form-group col">
-                            <label htmlFor="latInput">Latitude<span className="text-muted"> - required</span></label>
+                            <label htmlFor="latInput">Latitude</label>
                             <input
                                 onChange={this.handleInputChange}
                                 type="number" 
@@ -98,7 +118,7 @@ class NewPost extends React.Component {
                             />
                         </div>
                         <div className="form-group col">
-                            <label htmlFor="lngInput">Longitude<span className="text-muted"> - required</span></label>
+                            <label htmlFor="lngInput">Longitude</label>
                             <input
                                 onChange={this.handleInputChange}
                                 type="number" 
@@ -123,11 +143,11 @@ class NewPost extends React.Component {
                         />
                     </div>
                     
-                    <button type="submit" className="btn btn-primary">Submit Post</button>
+                    <button type="submit" className="btn btn-primary">Edit Post</button>
                 </form>
             </div>
         );
-    };
-};
+    }
+}
 
-export default NewPost;
+export default EditPost;
