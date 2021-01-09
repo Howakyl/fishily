@@ -39,6 +39,8 @@ class LogIn extends React.Component {
                                 id="usernameInput"
                                 value={this.state.username}
                                 name="username"
+                                pattern=".{4,}"
+                                title="Must be at least 4 characters long."
                             />
                         </div>
                         <br/>
@@ -51,6 +53,8 @@ class LogIn extends React.Component {
                                 id="passInput"
                                 value={this.state.password}
                                 name="password"
+                                pattern=".{4,}"
+                                title="Must be at least 4 characters long."
                             />
                         </div>
                     

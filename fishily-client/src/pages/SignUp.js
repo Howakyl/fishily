@@ -50,6 +50,8 @@ class SignUp extends React.Component {
                                 id="usernameInput"
                                 value={this.state.username}
                                 name="username"
+                                pattern=".{4,}"
+                                title="Must be at least 4 characters long."
                             />
                         </div>
                         <div className="form-group">
@@ -62,6 +64,8 @@ class SignUp extends React.Component {
                                 id="passInput"
                                 value={this.state.password}
                                 name="password"
+                                pattern=".{4,}"
+                                title="Must be at least 4 characters long."
                             />
                         </div>
                         <div className="form-group">
@@ -95,6 +99,8 @@ class SignUp extends React.Component {
                                 id="bioInput" 
                                 value={this.state.bio}
                                 name="bio"
+                                pattern=".{,200}"
+                                title="Must be fewer than 200 characters long."
                             />
                         </div>
 

@@ -48,7 +48,7 @@ const create = (req,res) => {
                     firstName: req.body.firstName,
                     lastName: req.body.lastName,
                     password: hashedPassword,
-                    bio: req.body.password,
+                    bio: req.body.bio,
                 }
 
                 db.User.create(newUser)
