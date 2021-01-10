@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "publishToHeroku": "cd ../ && git subtree push --prefix fishily-api heroku-fishily-backend main || true",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix fishily-client && npm run build --prefix fishily-client"
   },
   "author": "Kyle Howard",
   "license": "ISC",
